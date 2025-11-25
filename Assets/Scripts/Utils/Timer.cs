@@ -1,6 +1,6 @@
 ﻿using UnityEngine;
 
-namespace Timers {
+namespace Root.Timers {
     public class Timer {
         private float completionTime;
         

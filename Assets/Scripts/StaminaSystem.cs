@@ -17,6 +17,7 @@ namespace Root {
 
         private void Start() {
             LoadGame();
+            DontDestroyOnLoad(this);
         }
 
         private void Update() {
@@ -58,7 +59,6 @@ namespace Root {
         }
 
         private void StartRegeneration() {
-            Debug.Log("a");
             lastStaminaTime = DateTimeOffset.UtcNow.ToUnixTimeSeconds() + regenerationTime;
             isRegenerating = true;
         }
@@ -73,9 +73,7 @@ namespace Root {
         
         private void LoadGame() {
             currentStamina = PlayerPrefs.GetInt(CURRENT_STAMINA, maxStamina);
-            Debug.Log($"Load: {currentStamina}");
             lastStaminaTime = long.Parse(PlayerPrefs.GetString(LAST_STAMINA_TIME, DateTimeOffset.UtcNow.ToUnixTimeSeconds().ToString()));
-            Debug.Log($"Load: {lastStaminaTime}");
             if (IsStaminaFull()) {
                 StopRegeneration();
             }
