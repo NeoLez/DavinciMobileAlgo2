@@ -4,6 +4,6 @@ namespace Root {
     [CreateAssetMenu(menuName = "SO/Towers")]
     public class TowerSO : ScriptableObject {
         public int id;
-        public string name;
+        public string towerName;
     }
 }

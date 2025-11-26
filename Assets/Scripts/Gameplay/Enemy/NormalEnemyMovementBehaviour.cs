@@ -1,21 +1,22 @@
 using System;
 using System.Collections.Generic;
+using Root.Gameplay.Stats;
 using UnityEngine;
 
 namespace Root.Gameplay {
     [Serializable]
     public class NormalEnemyMovementBehaviour : EnemyMovementBehaviour {
-        [SerializeField] private float speed;
         private List<Transform> waypoints;
+        private StatValue movementSpeed;
         public override void Initialize(Enemy enemy) {
             base.Initialize(enemy);
             waypoints = Level.Ins.enemyPath;
-            Debug.Log(waypoints.Count);
+            movementSpeed = enemy.GetStats().GetValue((int)Stat.MovementSpeed);
         }
 
         private int index;
         public override void Update(float deltaTime) {
-            float moveAmount = speed * deltaTime;
+            float moveAmount = movementSpeed.value * deltaTime;
 
             while (index < waypoints.Count && moveAmount > 0) {
                 Vector3 moveDiff = waypoints[index].position - enemy.transform.position;
