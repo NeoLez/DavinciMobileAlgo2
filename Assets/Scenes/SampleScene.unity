@@ -284,13 +284,15 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementBehaviour:
     rid: 2049209859602907137
+  stats:
+    statsEditorOnly:
+    - stat: {fileID: 11400000, guid: 84305bc10475f69a8941388fd2760d3c, type: 2}
+      value: 1
   references:
     version: 2
     RefIds:
     - rid: 2049209859602907137
       type: {class: NormalEnemyMovementBehaviour, ns: Root.Gameplay, asm: Assembly-CSharp}
-      data:
-        speed: 10
 --- !u!4 &460405094
 Transform:
   m_ObjectHideFlags: 0
