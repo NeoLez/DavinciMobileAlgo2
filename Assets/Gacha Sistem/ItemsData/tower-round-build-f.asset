@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f868afb41d70e7445bc19b8a1eb53fd1, type: 3}
   m_Name: tower-round-build-f
   m_EditorClassIdentifier: 
-  ItemName: tower-round-build-f
+  ItemName: Torre Redonda Var-F
   ItemCost: 25
   ItemIcon: {fileID: 21300000, guid: 03e5f6fed552e8b4cb2df0297e25d8d7, type: 3}
   Rarity: 2

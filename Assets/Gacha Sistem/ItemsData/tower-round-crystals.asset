@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f868afb41d70e7445bc19b8a1eb53fd1, type: 3}
   m_Name: tower-round-crystals
   m_EditorClassIdentifier: 
-  ItemName: tower-round-crystals
+  ItemName: Torre Cristales
   ItemCost: 12
   ItemIcon: {fileID: 21300000, guid: 5e74dd21d8bcd194592909e94833f47e, type: 3}
   Rarity: 0
