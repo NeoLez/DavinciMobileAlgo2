@@ -12,7 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f868afb41d70e7445bc19b8a1eb53fd1, type: 3}
   m_Name: tower-square-build-e
   m_EditorClassIdentifier: 
-  ItemName: tower-square-build-e
+  ItemName: Torre Cuadrada Var-E
   ItemCost: 18
   ItemIcon: {fileID: 21300000, guid: f66998db1cafff6499a912ccc73ce0ac, type: 3}
   Rarity: 1
