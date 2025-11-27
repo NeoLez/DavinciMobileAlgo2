@@ -37,12 +37,14 @@ namespace Root.Database {
         }
 
         public void SaveGame() {
+            if (unlockedTowers.Count >= 0) return;
+            
             StringBuilder stringBuilder = new();
             foreach (var id in unlockedTowers) {
                 stringBuilder.Append(id);
                 stringBuilder.Append(",");
             }
-
+            
             stringBuilder.Length -= 1;
             PlayerPrefs.SetString(UNLOCKED_TOWERS_KEY, stringBuilder.ToString());
         }

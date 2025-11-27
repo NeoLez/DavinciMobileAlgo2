@@ -1,12 +1,13 @@
 using UnityEngine;
 
 namespace Root.Gameplay {
+    [RequireComponent(typeof(Stats.Stats))]
     public class Enemy : MonoBehaviour {
         [SerializeReference, SubclassSelector] private EnemyMovementBehaviour movementBehaviour;
-        [SerializeField] private Stats.Stats stats;
+        private Stats.Stats stats;
 
         private void Start() {
-            stats.Initialize();
+            stats = GetComponent<Stats.Stats>();
             movementBehaviour.Initialize(this);
             
         }

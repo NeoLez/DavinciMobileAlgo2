@@ -8,6 +8,7 @@ namespace Root.Gameplay {
             Ins = this;
         }
 
+        public float playerHealth;
         public List<Transform> enemyPath;
     }
 }
