@@ -24,13 +24,6 @@ public class AdsManager : MonoBehaviour
         {
             Destroy(gameObject);
         }
-
-        rewardedController.LoadRewardedAd();
-
-        StartCoroutine(DisplayBannerAd());
-
-        interstitialController.LoadInterstitialAd();
-        StartCoroutine(DisplayInterstitialAd());
     }
 
     public void ShowRewardedAd()
