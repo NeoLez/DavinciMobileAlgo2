@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f868afb41d70e7445bc19b8a1eb53fd1, type: 3}
-  m_Name: New ItemSO 7
+  m_Name: tower-round-build-a
   m_EditorClassIdentifier: 
-  ItemName: Tower 8
-  ItemCost: 18
-  ItemIcon: {fileID: 0}
-  Rarity: 1
+  ItemName: tower-round-build-a
+  ItemCost: 5
+  ItemIcon: {fileID: 21300000, guid: 3c7391fcd7b85c84096d01f74cb85cba, type: 3}
+  Rarity: 0

@@ -10,9 +10,9 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f868afb41d70e7445bc19b8a1eb53fd1, type: 3}
-  m_Name: New ItemSO 5
+  m_Name: tower-square-build-a
   m_EditorClassIdentifier: 
-  ItemName: Tower 6
-  ItemCost: 25
-  ItemIcon: {fileID: 0}
-  Rarity: 2
+  ItemName: tower-square-build-a
+  ItemCost: 18
+  ItemIcon: {fileID: 21300000, guid: 2b928460f0d41344e96312a658c03e8d, type: 3}
+  Rarity: 1
