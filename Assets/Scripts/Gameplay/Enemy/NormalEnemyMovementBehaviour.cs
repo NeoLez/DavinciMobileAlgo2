@@ -11,13 +11,14 @@ namespace Root.Gameplay {
         public override void Initialize(Enemy enemy) {
             base.Initialize(enemy);
             waypoints = Level.Ins.enemyPath;
-            movementSpeed = enemy.GetStats().GetValue((int)Stat.MovementSpeed);
+            movementSpeed = enemy.GetStats().GetValue(Stat.MovementSpeed);
         }
 
         private int index;
         public override void Update(float deltaTime) {
             float moveAmount = movementSpeed.value * deltaTime;
-
+            
+            
             while (index < waypoints.Count && moveAmount > 0) {
                 Vector3 moveDiff = waypoints[index].position - enemy.transform.position;
                 float distanceToWaypoint = moveDiff.magnitude;
@@ -28,6 +29,10 @@ namespace Root.Gameplay {
                 if (moveAmount >= 0) {
                     index++;
                 }
+            }
+
+            if (index >= waypoints.Count) {
+                Debug.Log("Reached End");
             }
         }
     }
