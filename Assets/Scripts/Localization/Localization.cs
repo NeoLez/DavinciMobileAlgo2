@@ -11,8 +11,8 @@ public enum Languages
     English
 }
 
-public class Localization : MonoBehaviour
-{
+public class Localization : MonoBehaviour {
+    public static Localization Ins;
     [SerializeField] string _webUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRVTI--PlgIhhTWFqtQn38Yq6uK9s9ZMcDmzFWm80Q668NRfDBIvecouSOJDA_STK_djaqpBzs08Hx_/pub?gid=0&single=true&output=csv";
 
     Dictionary<Languages, Dictionary<string, string>> _localization;
@@ -21,9 +21,10 @@ public class Localization : MonoBehaviour
 
     public event Action OnUpdate;
 
-    private void Awake()
-    {
+    private void Awake() {
+        Ins = this;
         StartCoroutine(DownloadCSV(_webUrl));
+        DontDestroyOnLoad(this);
     }
 
     IEnumerator DownloadCSV(string url)

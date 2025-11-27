@@ -8,21 +8,19 @@ namespace Root
     {
         [SerializeField] string _id;
 
-        [SerializeField] Localization _localization;
-
         TMP_Text _textComponent;
 
         private void Awake()
         {
             _textComponent = GetComponent<TMP_Text>();
 
-            _localization.OnUpdate += Refresh;
+            Localization.Ins.OnUpdate += Refresh;
 
         }
 
         void Refresh()
         {
-            var result = _localization.GetTranslate(_id);
+            var result = Localization.Ins.GetTranslate(_id);
 
             _textComponent.text = result;
         }
