@@ -13,7 +13,7 @@ public enum Languages
 
 public class Localization : MonoBehaviour
 {
-    [SerializeField] string _webUrl = "";
+    [SerializeField] string _webUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRVTI--PlgIhhTWFqtQn38Yq6uK9s9ZMcDmzFWm80Q668NRfDBIvecouSOJDA_STK_djaqpBzs08Hx_/pub?gid=0&single=true&output=csv";
 
     Dictionary<Languages, Dictionary<string, string>> _localization;
 
@@ -55,16 +55,6 @@ public class Localization : MonoBehaviour
         }
 
         OnUpdate?.Invoke();
-    }
-
-    private void Update()
-    {
-        if (Input.GetKeyDown(KeyCode.F))
-        {
-            _currentLanguage = _currentLanguage == Languages.English ? Languages.Spanish : Languages.English;
-
-            OnUpdate?.Invoke();
-        }
     }
 
     public string GetTranslate(string ID)
@@ -109,7 +99,7 @@ public class Localization : MonoBehaviour
                 return null;
             }
         }
-        catch (System.Exception e)
+        catch (Exception e)
         {
             Debug.LogError("Failed to load file: " + e.Message);
             return null;

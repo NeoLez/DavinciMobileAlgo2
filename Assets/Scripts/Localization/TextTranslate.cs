@@ -1,29 +1,30 @@
-using System.Collections;
-using System.Collections.Generic;
 using TMPro;
 using UnityEngine;
 
-[RequireComponent(typeof(TMP_Text))]
-public class TextTranslate : MonoBehaviour
+namespace Root
 {
-    [SerializeField] string _id;
-
-    [SerializeField] Localization _localization;
-
-    TMP_Text _textComponent;
-
-    private void Awake()
+    [RequireComponent(typeof(TMP_Text))]
+    public class TextTranslate : MonoBehaviour
     {
-        _textComponent = GetComponent<TMP_Text>();
+        [SerializeField] string _id;
 
-        _localization.OnUpdate += Refresh;
+        [SerializeField] Localization _localization;
 
-    }
+        TMP_Text _textComponent;
 
-    void Refresh()
-    {
-        var result = _localization.GetTranslate(_id);
+        private void Awake()
+        {
+            _textComponent = GetComponent<TMP_Text>();
 
-        _textComponent.text = result;
+            _localization.OnUpdate += Refresh;
+
+        }
+
+        void Refresh()
+        {
+            var result = _localization.GetTranslate(_id);
+
+            _textComponent.text = result;
+        }
     }
 }

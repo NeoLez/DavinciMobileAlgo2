@@ -821,6 +821,7 @@ PlayerSettings:
   vrEditorSettings: {}
   cloudServicesEnabled:
     UNet: 1
+    Unity Ads: 0
   luminIcon:
     m_Name: 
     m_ModelFolderPath: 
@@ -840,10 +841,10 @@ PlayerSettings:
   apiCompatibilityLevel: 6
   activeInputHandler: 0
   windowsGamepadBackendHint: 0
-  cloudProjectId: d779d322-f20f-4758-9935-8de57c673e78
+  cloudProjectId: 6a841e49-3431-489a-a6db-56848b9c234b
   framebufferDepthMemorylessMode: 0
   qualitySettingsNames: []
-  projectName: DavinciMobileAlgorithms 2025-11-26_22-15-46
+  projectName: DaVinciJuegoMobile
   organizationId: ngy1
   cloudEnabled: 0
   legacyClampBlendShapeWeights: 0
