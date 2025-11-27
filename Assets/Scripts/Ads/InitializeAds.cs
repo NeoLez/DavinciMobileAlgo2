@@ -9,12 +9,8 @@ public class InitializeAds : MonoBehaviour, IUnityAdsInitializationListener
 
     private void Awake()
     {
-        
-        Debug.Log(Advertisement.isInitialized);
-        Debug.Log(Advertisement.isSupported);
         if (!Advertisement.isInitialized && Advertisement.isSupported)
         {
-            Debug.Log("Initializing");
             Advertisement.Initialize(AndroidID, testMode, this);
         }
     }

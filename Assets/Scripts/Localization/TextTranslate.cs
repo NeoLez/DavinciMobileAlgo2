@@ -10,12 +10,11 @@ namespace Root
 
         TMP_Text _textComponent;
 
-        private void Awake()
+        private void Start()
         {
             _textComponent = GetComponent<TMP_Text>();
 
             Localization.Ins.OnUpdate += Refresh;
-
         }
 
         void Refresh()
