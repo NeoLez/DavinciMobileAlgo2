@@ -23,7 +23,7 @@ namespace Root.Shop {
             itemName.text = itemData.name;
             price = itemData.cost;
             itemCost.text = itemData.cost.ToString();
-            itemImage.sprite = itemData.icon;
+            itemImage.sprite = itemData.icon();
 
             myButton.onClick.AddListener(itemData.BuyItem);
         }
