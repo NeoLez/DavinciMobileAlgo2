@@ -299,6 +299,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   _webUrl: https://docs.google.com/spreadsheets/d/e/2PACX-1vRVTI--PlgIhhTWFqtQn38Yq6uK9s9ZMcDmzFWm80Q668NRfDBIvecouSOJDA_STK_djaqpBzs08Hx_/pub?gid=0&single=true&output=csv
+  update: 0
   _currentLanguage: 0
 --- !u!4 &777802704
 Transform:

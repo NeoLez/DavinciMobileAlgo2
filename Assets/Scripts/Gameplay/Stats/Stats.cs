@@ -25,7 +25,7 @@ namespace Root.Gameplay.Stats {
             if (statsDictionary.TryGetValue(id, out StatValue statValue)) {
                 return statValue;
             }
-            Debug.LogWarning("Error. Tried to access unset stat.");
+            Debug.LogWarning($"Error. Tried to access unset stat {id} gameobject {name}");
             return null;
         }
         

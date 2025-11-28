@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 
 namespace Root.Gameplay {
@@ -14,6 +15,10 @@ namespace Root.Gameplay {
 
         private void Update() {
             movementBehaviour.Update(Time.deltaTime);
+        }
+
+        public float GetPathPercentageCompletion() {
+            return movementBehaviour.GetPathPercentageCompletion();
         }
 
         public Stats.Stats GetStats() {

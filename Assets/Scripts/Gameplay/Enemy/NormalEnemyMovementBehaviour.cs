@@ -25,6 +25,8 @@ namespace Root.Gameplay {
                 Vector3 moveDir = moveDiff.normalized;
 
                 enemy.transform.position += moveDir * Mathf.Min(moveAmount, distanceToWaypoint);
+                totalDistanceTravelled += Mathf.Min(moveAmount, distanceToWaypoint);
+                
                 moveAmount -= distanceToWaypoint;
                 if (moveAmount >= 0) {
                     index++;
@@ -34,6 +36,10 @@ namespace Root.Gameplay {
             if (index >= waypoints.Count) {
                 Debug.Log("Reached End");
             }
+        }
+
+        public override float GetPathPercentageCompletion() {
+            return totalDistanceTravelled / Level.Ins.PathLength;
         }
     }
 }

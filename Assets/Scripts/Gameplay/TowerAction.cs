@@ -18,12 +18,16 @@ namespace Root.Gameplay {
         }
 
         public void Update() {
+            //Debug.Log($"{Time.time} {lastActivation} {cooldown.value}");
             if (Time.time >= lastActivation + cooldown.value) {
                 Activate();
-                lastActivation = Time.time;
             }
         }
 
         public abstract void Activate();
+
+        protected void CompletedAction() {
+            lastActivation = Time.time;
+        }
     }
 }
