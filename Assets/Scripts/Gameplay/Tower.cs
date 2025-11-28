@@ -48,7 +48,12 @@ namespace Root.Gameplay {
         }
 
         private void OnTriggerExit2D(Collider2D other) {
-            if (targetedEnemy is null) return;
+            if (targetedEnemy == null || other.gameObject == null) return;
+            
+            Debug.Log(targetedEnemy);
+            Debug.Log(targetedEnemy.gameObject);
+            Debug.Log(other);
+            Debug.Log(other.gameObject);
             
             if (targetedEnemy.gameObject == other.gameObject) {
                 targetedEnemy = null;

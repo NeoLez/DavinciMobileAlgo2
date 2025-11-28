@@ -35,6 +35,7 @@ namespace Root.Gameplay {
 
             if (index >= waypoints.Count) {
                 EventManager.Trigger(new EventPayloads.EnemyReachedEnd((int)enemy.GetStats().GetValue(Stat.AttackDamage).value));
+                EventManager.Trigger(new EventPayloads.EnemyDied());
                 GameObject.Destroy(enemy.gameObject);
             }
         }

@@ -6,52 +6,43 @@ using UnityEngine;
 namespace Root.Gameplay {
     public class EnemySpawner : MonoBehaviour {
         [SerializeField] private List<EnemySpawnerPool> waves;
-        [SerializeField]private int waveIndex;
-        [SerializeField]private bool wavesFinished;
-
-        [SerializeField]private float waveFinishTime;
-        [SerializeField]private float nextEnemySpawn = float.MaxValue;
-        [SerializeField]private float enemySpawnDelay;
-
-        [SerializeField]private int totalSpawnedEnemies;
+        [SerializeField] private int waveIndex;
+        [SerializeField] private bool wavesFinished;
+        [SerializeField] private int enemiesSpawnedThisWave;
+        [SerializeField] private bool running; 
+        
+        [SerializeField] private int totalSpawnedEnemies;
+        private float lastTimeSpawned;
+        private bool raisedWin;
 
         private void Awake() {
             EventManager.Subscribe<EventPayloads.EnemyDied>((_ => totalSpawnedEnemies--));
         }
 
         private void Update() {
+            if(!running) return;
             if (wavesFinished) {
-                if (totalSpawnedEnemies == 0) {
-                    EventManager.Trigger(new EventPayloads.BattleEndEvent(true));
+                if (totalSpawnedEnemies == 0 && !raisedWin) {
+                    raisedWin = true;
+                    EventManager.Trigger(new EventPayloads.EnemiesEliminated());
                 }
                 return;
             }
-            if (Time.time > waveFinishTime) {
-                if (waveIndex == waves.Count - 1) {
-                    wavesFinished = true;
-                    return;
-                }
-                
-                waveIndex++;
-                waveFinishTime = Time.time + waves[waveIndex].time;
-                int amount = waves[waveIndex].amount;
-                if (amount == 0) {
-                    enemySpawnDelay = float.MaxValue;
-                }
-                else {
-                    enemySpawnDelay = waves[waveIndex].time / waves[waveIndex].amount;
-                }
-                
-                nextEnemySpawn = Time.time + enemySpawnDelay;
-            }
-
-            if (Time.time >= nextEnemySpawn) {
-                nextEnemySpawn = Time.time + nextEnemySpawn;
+            
+            if (Time.time >= lastTimeSpawned + waves[waveIndex].time && enemiesSpawnedThisWave < waves[waveIndex].amount) {
                 GameObject enemy = Instantiate(waves[waveIndex].enemy);
                 enemy.transform.position = transform.position;
+                enemiesSpawnedThisWave++;
                 totalSpawnedEnemies++;
-            }
-            
+                lastTimeSpawned = Time.time;
+                if (enemiesSpawnedThisWave == waves[waveIndex].amount) {
+                    enemiesSpawnedThisWave = 0;
+                    waveIndex++;
+                    if (waveIndex == waves.Count) {
+                        wavesFinished = true;
+                    }
+                }
+            } 
         }
 
         public bool HaveWavesFinished() {

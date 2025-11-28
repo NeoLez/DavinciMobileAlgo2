@@ -155,6 +155,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statsEditorOnly:
   - stat: {fileID: 11400000, guid: 84305bc10475f69a8941388fd2760d3c, type: 2}
-    value: 1
+    value: 3
   - stat: {fileID: 11400000, guid: b85feaa4e77a08ffc95d709936162e61, type: 2}
     value: 1
