@@ -13,5 +13,9 @@
         public class EnemyDied {
             
         }
+
+        public class EnemiesEliminated {
+            
+        }
     }
 }
