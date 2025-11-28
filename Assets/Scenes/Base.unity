@@ -391,7 +391,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1eed153483ff4414af865ae9cdd0cba4, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  maxStamina: 50
+  maxStamina: 100
   currentStamina: 0
   regenerationTime: 2
 --- !u!4 &1475266620
