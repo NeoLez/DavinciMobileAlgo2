@@ -16,14 +16,18 @@ namespace Root {
             Grid grid = Level.Ins.grid;
             Tower tower = grid.GetTower(posGrid);
             if (tower == null) {
+                if (!Level.Ins.gold.ConsumeGold(TowerToPlace.levelCosts[0])) return;
                 GameObject tow = Instantiate(TowerToPlace.levels[0]);
                 Tower to = tow.GetComponent<Tower>();
                 grid.SetTower(posGrid, to);
             }
             else {
-                tower.GetUpgradeLevel();
+                int level = tower.GetUpgradeLevel() + 1;
+                if(level >= TowerToPlace.levels.Count) return;
+                if (!Level.Ins.gold.ConsumeGold(TowerToPlace.levelCosts[level])) return;
+                
                 grid.RemoveTower(posGrid);
-                GameObject tow = Instantiate(TowerToPlace.levels[(tower.GetUpgradeLevel() + 1) % TowerToPlace.levels.Count]);
+                GameObject tow = Instantiate(TowerToPlace.levels[level]);
                 Tower to = tow.GetComponent<Tower>();
                 grid.SetTower(posGrid, to);
             }
