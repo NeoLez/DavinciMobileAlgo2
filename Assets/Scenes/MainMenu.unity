@@ -3002,6 +3002,68 @@ MeshFilter:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 924073939}
   m_Mesh: {fileID: -6032365043310741612, guid: 1626728712dc703c4bdec16476f6e4fe, type: 3}
+--- !u!1 &967528671
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 967528672}
+  - component: {fileID: 967528673}
+  m_Layer: 0
+  m_Name: SoundManager
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &967528672
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967528671}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 979130288}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &967528673
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 967528671}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: fafc47b15a6a95141b6dc4a369ca3349, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  mixers:
+  - mixerName: Musics
+    mixer: {fileID: 24100000, guid: 289bc59c51d35e64abcdd8072a604f6c, type: 2}
+  audioSources:
+  - sourceName: 
+    source: {fileID: 0}
+  - sourceName: 
+    source: {fileID: 0}
+  audioClips:
+  - clipName: 
+    clip: {fileID: 0}
+  sfxSource: {fileID: 0}
+  musicSource: {fileID: 0}
+--- !u!4 &979130288 stripped
+Transform:
+  m_CorrespondingSourceObject: {fileID: 8602265115187719622, guid: b710ad5fde2108c4f80b36c18fb755f8, type: 3}
+  m_PrefabInstance: {fileID: 1359726805329216467}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &1003210563
 GameObject:
   m_ObjectHideFlags: 0
@@ -6783,6 +6845,10 @@ PrefabInstance:
       value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 3880419115680852846, guid: b710ad5fde2108c4f80b36c18fb755f8, type: 3}
+      propertyPath: m_text
+      value: Iniciar
+      objectReference: {fileID: 0}
+    - target: {fileID: 3880419115680852846, guid: b710ad5fde2108c4f80b36c18fb755f8, type: 3}
       propertyPath: m_fontSize
       value: 24
       objectReference: {fileID: 0}
@@ -7038,6 +7104,9 @@ PrefabInstance:
     - {fileID: 785155414262804416, guid: b710ad5fde2108c4f80b36c18fb755f8, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects:
+    - targetCorrespondingSourceObject: {fileID: 8602265115187719622, guid: b710ad5fde2108c4f80b36c18fb755f8, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 967528672}
     - targetCorrespondingSourceObject: {fileID: 7299873387206933028, guid: b710ad5fde2108c4f80b36c18fb755f8, type: 3}
       insertIndex: 0
       addedObject: {fileID: 908169596}
