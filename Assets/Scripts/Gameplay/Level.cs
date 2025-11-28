@@ -16,5 +16,6 @@ namespace Root.Gameplay {
         public float playerHealth;
         public List<Transform> enemyPath;
         public float PathLength { get; private set; }
+        public Grid grid;
     }
 }
