@@ -5,5 +5,6 @@ namespace Root.Gameplay.Stats {
         TowerRange = 3,
         AttackCooldown = 4,
         AttackPierceLevel = 5,
+        GoldGenerated = 6,
     }
 }
