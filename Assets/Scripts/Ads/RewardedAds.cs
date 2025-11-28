@@ -1,3 +1,4 @@
+using System;
 using UnityEngine;
 using UnityEngine.Advertisements;
 
@@ -31,13 +32,16 @@ public class RewardedAds : MonoBehaviour, IUnityAdsLoadListener, IUnityAdsShowLi
         Debug.Log(nameof(OnUnityAdsShowClick));
     }
 
+    public event Action<UnityAdsShowCompletionState> OnAddCompleted;
     public void OnUnityAdsShowComplete(string placementId, UnityAdsShowCompletionState showCompletionState)
     {
         if (placementId != RewardedAdID)
         {
             return;
         }
-
+        
+        OnAddCompleted?.Invoke(showCompletionState);
+        OnAddCompleted = null;
         if (showCompletionState.Equals(UnityAdsShowCompletionState.COMPLETED))
         {
             Debug.Log("Full rewards");
