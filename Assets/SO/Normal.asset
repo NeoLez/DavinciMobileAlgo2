@@ -13,3 +13,8 @@ MonoBehaviour:
   m_Name: Normal
   m_EditorClassIdentifier: 
   id: 1
+  icon: {fileID: 0}
+  towerName: 
+  description: 
+  levels: []
+  levelCosts: 
