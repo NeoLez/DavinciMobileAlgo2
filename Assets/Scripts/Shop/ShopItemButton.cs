@@ -3,7 +3,8 @@ using UnityEngine;
 using UnityEngine.UI;
 
 namespace Root.Shop {
-    public class ShopItemButton : MonoBehaviour {
+    public class ShopItemButton : MonoBehaviour 
+    {
         [SerializeField]
         private TextMeshProUGUI itemName;
         [SerializeField]

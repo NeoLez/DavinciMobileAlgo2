@@ -113,4 +113,10 @@ public class Localization : MonoBehaviour {
             return null;
         }
     }
+
+    public void ForceUpdate()
+    {
+        OnUpdate?.Invoke();
+    }
+
 }
