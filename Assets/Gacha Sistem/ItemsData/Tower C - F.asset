@@ -10,7 +10,7 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: f9310a6421bf42f9b5c7a6034e82e1dd, type: 3}
-  m_Name: New Shop Item 10
+  m_Name: Tower C - F
   m_EditorClassIdentifier: 
   _cost: 0
   _icon: {fileID: 0}
