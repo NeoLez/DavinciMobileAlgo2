@@ -47,7 +47,6 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2b38ee2109b4290bcdd5c670b83a451, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  lifetime: 5
   speed: 3
   visuals: {fileID: 6806783361050360433}
 --- !u!50 &4305741217315774068
@@ -106,7 +105,7 @@ CircleCollider2D:
   m_CallbackLayers:
     serializedVersion: 2
     m_Bits: 4294967295
-  m_IsTrigger: 0
+  m_IsTrigger: 1
   m_UsedByEffector: 0
   m_UsedByComposite: 0
   m_Offset: {x: 0, y: 0}
