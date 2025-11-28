@@ -9,7 +9,6 @@ namespace Root.Gameplay {
         public override void Activate() {
             Enemy enemy = tower.GetTargetedEnemy();
             if (enemy != null) {
-                Debug.Log("b");
                 GameObject obj = Object.Instantiate(_projectile);
                 obj.transform.position = tower.transform.position + Vector3.back;
                 IProjectile projectile = obj.GetComponent<IProjectile>();
