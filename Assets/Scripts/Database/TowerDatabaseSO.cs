@@ -36,6 +36,14 @@ namespace Root.Database {
             }
         }
 
+        public void UnlockTower(TowerSO towerSO) {
+            unlockedTowers.Add(towerSO.id);
+        }
+
+        public bool IsTowerUnlocked(TowerSO towerSO) {
+            return unlockedTowers.Contains(towerSO.id);
+        }
+
         public void SaveGame() {
             if (unlockedTowers.Count >= 0) return;
             
