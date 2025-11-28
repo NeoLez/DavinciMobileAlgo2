@@ -8,6 +8,7 @@ namespace Root.Gameplay {
         [SerializeReference, SubclassSelector] private EnemyMovementBehaviour movementBehaviour;
         private Stats.Stats stats;
         [SerializeField] private int health;
+        private bool isDead;
 
         private void Start() {
             stats = GetComponent<Stats.Stats>();
@@ -44,6 +45,11 @@ namespace Root.Gameplay {
         }
 
         public void Die() {
+            
+            if(isDead) return;
+            isDead = true;
+            
+            EventManager.Trigger(new EventPayloads.EnemyDied());
             Destroy(gameObject);
         }
     }

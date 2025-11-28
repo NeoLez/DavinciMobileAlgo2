@@ -9,5 +9,9 @@
             public int Damage { get; private set; }
             public EnemyReachedEnd(int damage) => Damage = damage;
         }
+
+        public class EnemyDied {
+            
+        }
     }
 }
