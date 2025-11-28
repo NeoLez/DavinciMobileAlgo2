@@ -26,14 +26,17 @@ namespace Root.Gameplay {
         }
 
         public bool SetTower(Vector2 pos, Tower tower) {
-            if (GetTower(pos) is null) return false;
+            if (blockedPositions.Contains(pos) || GetTower(pos) is not null) return false;
+            tower.transform.position = pos;
             positions[pos] = tower;
             return true;
         }
 
         public bool RemoveTower(Vector2 pos) {
-            if (GetTower(pos) is null) return false;
+            Tower tower = GetTower(pos);
+            if (tower is null) return false;
             positions.Remove(pos);
+            Destroy(tower.gameObject);
             return true;
         }
     }

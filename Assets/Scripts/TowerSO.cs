@@ -1,3 +1,5 @@
+using System.Collections.Generic;
+using Root.Gameplay;
 using UnityEngine;
 
 namespace Root {
@@ -7,7 +9,9 @@ namespace Root {
         public Sprite icon;
         public string towerName;
         public string description;
-        public int inGameCost;
         
+        public List<GameObject> levels;
+        public List<int> levelCosts;
+
     }
 }

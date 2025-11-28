@@ -8,6 +8,8 @@ namespace Root.Gameplay {
         [SerializeReference, SubclassSelector] private TowerAction action;
         private Enemy targetedEnemy;
         private float targetDistance = float.MaxValue;
+        [SerializeField] private TowerSO TowerSO;
+        [SerializeField] private int upgradeLevel;
         private void Start() {
             stats = GetComponent<Stats.Stats>();
             GetComponent<CircleCollider2D>().radius = stats.GetValue(Stat.TowerRange).value;
@@ -20,6 +22,14 @@ namespace Root.Gameplay {
 
         public Stats.Stats GetStats() {
             return stats;
+        }
+
+        public TowerSO GetTowerSO() {
+            return TowerSO;
+        }
+
+        public int GetUpgradeLevel() {
+            return upgradeLevel;
         }
 
         public Enemy GetTargetedEnemy() {

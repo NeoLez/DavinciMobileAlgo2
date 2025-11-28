@@ -16,4 +16,5 @@ MonoBehaviour:
   - {fileID: 11400000, guid: 0acaca0d2489b2098bc8d4c6e6be2ef9, type: 2}
   - {fileID: 11400000, guid: 5072c3bb41f8df79bb4f454654edc32a, type: 2}
   - {fileID: 11400000, guid: bd157b13afdd9c57a8d9b11334bf0a90, type: 2}
-  DefaultUnlockedTowers: []
+  DefaultUnlockedTowers:
+  - {fileID: 11400000, guid: 0acaca0d2489b2098bc8d4c6e6be2ef9, type: 2}

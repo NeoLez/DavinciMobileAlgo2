@@ -31,7 +31,6 @@ namespace Root.Gameplay {
         }
 
         private void OnTriggerEnter2D(Collider2D other) {
-            Debug.Log(other.name);
             if(other.gameObject.layer != LayerMask.NameToLayer("Enemy")) return;
             Enemy enemy = other.GetComponent<Enemy>();
             enemy.TakeDamage(damage);
