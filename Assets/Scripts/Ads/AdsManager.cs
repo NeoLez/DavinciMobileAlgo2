@@ -1,6 +1,8 @@
+using System;
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.Advertisements;
 
 public class AdsManager : MonoBehaviour
 {
@@ -29,6 +31,10 @@ public class AdsManager : MonoBehaviour
     public void ShowRewardedAd()
     {
         rewardedController.ShowRewardedAd();
+    }
+    
+    public void SubscribeToRewardedAdResult(Action<UnityAdsShowCompletionState> callback) {
+        rewardedController.OnAddCompleted += callback;
     }
 
     private IEnumerator DisplayBannerAd()

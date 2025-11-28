@@ -12,7 +12,8 @@ public class EnergyButton : MonoBehaviour
         if (Database.Ins != null && Database.Ins.staminaSystem != null)
         {
             int currentStamina = Database.Ins.staminaSystem.GetStamina();
-            staminaText.text = currentStamina.ToString();
+            int maxStamina = Database.Ins.staminaSystem.GetMaxStamina();
+            staminaText.text = $"{currentStamina}/{maxStamina}";
         }
         else
         {
