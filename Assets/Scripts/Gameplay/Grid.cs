@@ -39,5 +39,31 @@ namespace Root.Gameplay {
             Destroy(tower.gameObject);
             return true;
         }
+
+        public bool BuyTower(Vector2 pos, TowerSO towerSO) {
+            if (GetTower(pos) != null) return false;
+            if (!Level.Ins.gold.ConsumeGold(towerSO.levelCosts[0])) return false;
+            
+            GameObject tow = Instantiate(towerSO.levels[0]);
+            Tower to = tow.GetComponent<Tower>();
+            SetTower(pos, to);
+            return true;
+        }
+        
+        public bool Upgrade(Vector2 pos) {
+            Tower tower = GetTower(pos);
+            if (GetTower(pos) == null) return false;
+            int targetLevel = tower.GetUpgradeLevel() + 1;
+            TowerSO towerSO = tower.GetTowerSO();
+            if (targetLevel == towerSO.levels.Count) return false;
+            if (!Level.Ins.gold.ConsumeGold(towerSO.levelCosts[targetLevel])) return false;
+
+            RemoveTower(pos);
+            
+            GameObject tow = Instantiate(towerSO.levels[targetLevel]);
+            Tower to = tow.GetComponent<Tower>();
+            SetTower(pos, to);
+            return true;
+        }
     }
 }
