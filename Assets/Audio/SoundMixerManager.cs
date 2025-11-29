@@ -11,19 +11,19 @@ namespace Root
 
         public void SetGlobalVolume(float level)
         {
-            audioMixer.SetFloat("Global Volumen", level);
+            audioMixer.SetFloat("Global Volumen", Mathf.Log10(level) * 20f);
         }
 
 
         public void SetMusicVolume(float level)
         {
-            audioMixer.SetFloat("Music Volumen", level);
+            audioMixer.SetFloat("Music Volumen", Mathf.Log10(level) * 20f);
         }
 
 
         public void SetSFXsVolume(float level)
         {
-            audioMixer.SetFloat("Sound FXs Volumen", level);
+            audioMixer.SetFloat("Sound FXs Volumen", Mathf.Log10(level) * 20f);
         }   
 
 
