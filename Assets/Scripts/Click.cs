@@ -15,9 +15,7 @@ namespace Root {
         }
 
         private void Update() {
-            if (EventSystem.current.IsPointerOverGameObject()) {
-                
-                
+            if (!EventSystem.current.IsPointerOverGameObject()) {
                 if (Input.GetMouseButtonDown(0)) {
                     if(!Physics.Raycast(Camera.main.ScreenPointToRay(Input.mousePosition), out var hit)) return;
                     Vector2 posGrid = new Vector2(Mathf.Round(hit.point.x), Mathf.Round(hit.point.y));

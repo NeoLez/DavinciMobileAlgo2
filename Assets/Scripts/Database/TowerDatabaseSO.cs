@@ -44,6 +44,11 @@ namespace Root.Database {
             return unlockedTowers.Contains(towerSO.id);
         }
 
+        public List<TowerSO> GetUnlockedTowers()
+        {
+            return unlockedTowers.Select(id => towerDictionary[id]).ToList();
+        }
+
         public void SaveGame() {
             if (unlockedTowers.Count >= 0) return;
             

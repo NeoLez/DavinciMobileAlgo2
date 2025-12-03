@@ -13,4 +13,8 @@ MonoBehaviour:
   m_Name: Tower 1
   m_EditorClassIdentifier: 
   id: 2
-  name: Fire
+  icon: {fileID: 21300000, guid: dad1f71fe8ea9a242be434a71ac8f3fd, type: 3}
+  towerName: Tower 2
+  description: Tower 2 Description
+  levels: []
+  levelCosts: 
