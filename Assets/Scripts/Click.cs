@@ -1,8 +1,6 @@
-﻿using System;
-using Root.Gameplay;
+﻿using Root.Gameplay;
 using UnityEngine;
 using UnityEngine.EventSystems;
-using Debug = UnityEngine.Debug;
 using Grid = Root.Gameplay.Grid;
 
 namespace Root {
