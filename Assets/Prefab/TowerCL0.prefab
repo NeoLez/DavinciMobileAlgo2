@@ -276,7 +276,7 @@ Transform:
   m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: d099d8d2132bf43c9a2bfee2b9b1a325, type: 3}
   m_PrefabInstance: {fileID: 5584628047720323266}
   m_PrefabAsset: {fileID: 0}
---- !u!1001 &5691115469403763175
+--- !u!1001 &5896380311783287489
 PrefabInstance:
   m_ObjectHideFlags: 0
   serializedVersion: 2
@@ -284,59 +284,59 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 2849151213536902450}
     m_Modifications:
-    - target: {fileID: -8679921383154817045, guid: fd476335eedb12d4b8b8fee28f5c7f93, type: 3}
+    - target: {fileID: 1436551708891457143, guid: e6bd0ba5c41f7dd419fdc6130172e596, type: 3}
+      propertyPath: m_Name
+      value: tower-round-crystals
+      objectReference: {fileID: 0}
+    - target: {fileID: 1775676676978834637, guid: e6bd0ba5c41f7dd419fdc6130172e596, type: 3}
       propertyPath: m_LocalPosition.x
       value: -0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: fd476335eedb12d4b8b8fee28f5c7f93, type: 3}
+    - target: {fileID: 1775676676978834637, guid: e6bd0ba5c41f7dd419fdc6130172e596, type: 3}
       propertyPath: m_LocalPosition.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: fd476335eedb12d4b8b8fee28f5c7f93, type: 3}
+    - target: {fileID: 1775676676978834637, guid: e6bd0ba5c41f7dd419fdc6130172e596, type: 3}
       propertyPath: m_LocalPosition.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: fd476335eedb12d4b8b8fee28f5c7f93, type: 3}
+    - target: {fileID: 1775676676978834637, guid: e6bd0ba5c41f7dd419fdc6130172e596, type: 3}
       propertyPath: m_LocalRotation.w
       value: 0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: fd476335eedb12d4b8b8fee28f5c7f93, type: 3}
+    - target: {fileID: 1775676676978834637, guid: e6bd0ba5c41f7dd419fdc6130172e596, type: 3}
       propertyPath: m_LocalRotation.x
       value: -0.7071068
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: fd476335eedb12d4b8b8fee28f5c7f93, type: 3}
+    - target: {fileID: 1775676676978834637, guid: e6bd0ba5c41f7dd419fdc6130172e596, type: 3}
       propertyPath: m_LocalRotation.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: fd476335eedb12d4b8b8fee28f5c7f93, type: 3}
+    - target: {fileID: 1775676676978834637, guid: e6bd0ba5c41f7dd419fdc6130172e596, type: 3}
       propertyPath: m_LocalRotation.z
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: fd476335eedb12d4b8b8fee28f5c7f93, type: 3}
+    - target: {fileID: 1775676676978834637, guid: e6bd0ba5c41f7dd419fdc6130172e596, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x
       value: -90
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: fd476335eedb12d4b8b8fee28f5c7f93, type: 3}
+    - target: {fileID: 1775676676978834637, guid: e6bd0ba5c41f7dd419fdc6130172e596, type: 3}
       propertyPath: m_LocalEulerAnglesHint.y
       value: 0
       objectReference: {fileID: 0}
-    - target: {fileID: -8679921383154817045, guid: fd476335eedb12d4b8b8fee28f5c7f93, type: 3}
+    - target: {fileID: 1775676676978834637, guid: e6bd0ba5c41f7dd419fdc6130172e596, type: 3}
       propertyPath: m_LocalEulerAnglesHint.z
       value: 0
-      objectReference: {fileID: 0}
-    - target: {fileID: 919132149155446097, guid: fd476335eedb12d4b8b8fee28f5c7f93, type: 3}
-      propertyPath: m_Name
-      value: tower-round-crystals
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
     m_AddedComponents: []
-  m_SourcePrefab: {fileID: 100100000, guid: fd476335eedb12d4b8b8fee28f5c7f93, type: 3}
+  m_SourcePrefab: {fileID: 100100000, guid: e6bd0ba5c41f7dd419fdc6130172e596, type: 3}
 --- !u!4 &5291833056497751564 stripped
 Transform:
-  m_CorrespondingSourceObject: {fileID: -8679921383154817045, guid: fd476335eedb12d4b8b8fee28f5c7f93, type: 3}
-  m_PrefabInstance: {fileID: 5691115469403763175}
+  m_CorrespondingSourceObject: {fileID: 1775676676978834637, guid: e6bd0ba5c41f7dd419fdc6130172e596, type: 3}
+  m_PrefabInstance: {fileID: 5896380311783287489}
   m_PrefabAsset: {fileID: 0}
 --- !u!1001 &7165561275553717755
 PrefabInstance:
