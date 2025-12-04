@@ -8,9 +8,9 @@ namespace Root.UI
 {
     public class UpgradeMenu : MonoBehaviour
     {
-        [SerializeField] private TMP_Text towerName;
+        [SerializeField] private TextTranslate towerName;
         [SerializeField] private Image icon;
-        [SerializeField] private TMP_Text towerdescription;
+        [SerializeField] private TextTranslate towerdescription;
         [SerializeField] private GameObject statsPanel;
         [SerializeField] private TMP_Text sellButton;
         [SerializeField] private TMP_Text upgradeButton;
@@ -25,9 +25,9 @@ namespace Root.UI
             this.tower = tower;
             this.gridPos = gridPos;
             TowerSO so = tower.GetTowerSO();
-            towerName.text = so.towerName;
+            towerName.SetId(so.towerName);
             icon.sprite = so.icon;
-            towerdescription.text = so.description;
+            towerdescription.SetId(so.description);
             int level = tower.GetUpgradeLevel();
             sellButton.text = (so.levelCosts[level] / 2).ToString();
             if (level + 1 < so.levels.Count)

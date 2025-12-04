@@ -14,8 +14,9 @@ public enum Languages
 public class Localization : MonoBehaviour {
     public static Localization Ins;
     [SerializeField] string _webUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRVTI--PlgIhhTWFqtQn38Yq6uK9s9ZMcDmzFWm80Q668NRfDBIvecouSOJDA_STK_djaqpBzs08Hx_/pub?gid=0&single=true&output=csv";
-    [SerializeField] private bool update;
+    private bool update;
     Dictionary<Languages, Dictionary<string, string>> _localization;
+    private bool isInitialized;
 
     [SerializeField] Languages _currentLanguage;
 
@@ -62,6 +63,7 @@ public class Localization : MonoBehaviour {
             _localization = split.LoadCSV(result, "hard disk");
         }
 
+        isInitialized = true;
         OnUpdate?.Invoke();
     }
 
@@ -83,7 +85,7 @@ public class Localization : MonoBehaviour {
             File.WriteAllText(path, content);
             Debug.Log("File saved successfully at: " + path);
         }
-        catch (System.Exception e)
+        catch (Exception e)
         {
             Debug.LogError("Failed to save file: " + e.Message);
         }
@@ -117,6 +119,11 @@ public class Localization : MonoBehaviour {
     public void ForceUpdate()
     {
         OnUpdate?.Invoke();
+    }
+
+    public bool IsInitialized()
+    {
+        return isInitialized;
     }
 
 }
