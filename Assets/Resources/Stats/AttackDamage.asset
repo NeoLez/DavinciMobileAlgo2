@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: AttackDamage
   m_EditorClassIdentifier: 
   statName: Attack Damage
+  statDescription: 
+  statIcon: {fileID: 21300000, guid: 03049c29c52dfe644b2f363ed6925744, type: 3}
   id: 2

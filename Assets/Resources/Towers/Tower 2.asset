@@ -13,7 +13,7 @@ MonoBehaviour:
   m_Name: Tower 2
   m_EditorClassIdentifier: 
   id: 3
-  icon: {fileID: 21300000, guid: 4c933430df41cfb4a9204dca9ad382dc, type: 3}
+  icon: {fileID: 21300000, guid: 5e74dd21d8bcd194592909e94833f47e, type: 3}
   towerName: ID_Tower3Name
   description: ID_Tower3Description
   levels:

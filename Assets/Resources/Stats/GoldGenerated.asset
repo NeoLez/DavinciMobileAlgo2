@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: GoldGenerated
   m_EditorClassIdentifier: 
   statName: Gold Generated
+  statDescription: 
+  statIcon: {fileID: 21300000, guid: 50e824a7d3ad9404a9391cd34edf802c, type: 3}
   id: 6

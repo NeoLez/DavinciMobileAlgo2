@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: TowerRange
   m_EditorClassIdentifier: 
   statName: Tower Range
+  statDescription: 
+  statIcon: {fileID: 21300000, guid: 5daaa36d570a1f648ab669915af246da, type: 3}
   id: 3
