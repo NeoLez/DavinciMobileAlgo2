@@ -14,7 +14,7 @@ GameObject:
   - component: {fileID: 8238018078599693179}
   - component: {fileID: 8444334351411765155}
   m_Layer: 8
-  m_Name: TowerL1
+  m_Name: TowerAL1
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -144,7 +144,7 @@ MonoBehaviour:
   - stat: {fileID: 11400000, guid: b85feaa4e77a08ffc95d709936162e61, type: 2}
     value: 2
   - stat: {fileID: 11400000, guid: b8e91e3eabb33c34e888f35b63198bcd, type: 2}
-    value: 1
+    value: 2
 --- !u!1001 &7251975943798820909
 PrefabInstance:
   m_ObjectHideFlags: 0

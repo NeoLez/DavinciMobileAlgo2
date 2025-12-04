@@ -14,7 +14,10 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 3
   icon: {fileID: 21300000, guid: 4c933430df41cfb4a9204dca9ad382dc, type: 3}
-  towerName: Tower 3
-  description: Tower 3 Description
-  levels: []
-  levelCosts: 
+  towerName: ID_Tower3Name
+  description: ID_Tower3Description
+  levels:
+  - {fileID: 8682478097807941694, guid: bcac36d76a425704cb5316a395b4dca5, type: 3}
+  - {fileID: 8682478097807941694, guid: f7636175ebb1ce5489e1f79c364bc53c, type: 3}
+  - {fileID: 8682478097807941694, guid: 1e8e554e6f1066a4498b36535ffdd9e0, type: 3}
+  levelCosts: 010000000200000003000000
