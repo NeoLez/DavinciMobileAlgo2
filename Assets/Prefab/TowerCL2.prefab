@@ -53,7 +53,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   action:
     rid: 7099092017688084480
-  TowerSO: {fileID: 11400000, guid: 0acaca0d2489b2098bc8d4c6e6be2ef9, type: 2}
+  TowerSO: {fileID: 11400000, guid: bd157b13afdd9c57a8d9b11334bf0a90, type: 2}
   upgradeLevel: 0
   enemyLayer:
     serializedVersion: 2

@@ -4,7 +4,7 @@ namespace Root.Database {
     public class CurrencySystem {
         private const string CURRENT_CURRENCY = "CurrentCurrency";
         private int currency;
-        private const int START_CURRENCY = 0;
+        private const int START_CURRENCY = 10;
 
         public CurrencySystem() {
             LoadGame();
@@ -22,6 +22,7 @@ namespace Root.Database {
         }
 
         public bool ConsumeCurrency(int amount) {
+            Debug.Log($"Current {currency}, to consume {amount}");
             if (amount > currency) return false;
 
             currency -= amount;

@@ -16,6 +16,7 @@ namespace Root.Database {
         private void Start() {
             towerDatabase.Initialize();
             currencySystem = new ();
+            currencySystem.AddCurrency(10);
             Assert.IsTrue(staminaSystem != null, "Database: Stamina system not found.");
         }
         

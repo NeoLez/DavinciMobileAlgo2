@@ -1614,6 +1614,22 @@ PrefabInstance:
       propertyPath: m_OnValueChanged.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
       value: SetMusicVolume
       objectReference: {fileID: 0}
+    - target: {fileID: 2351309938833582173, guid: d7ed1efa968508a4daacc46e382c1aeb, type: 3}
+      propertyPath: _buttonPrefab
+      value: 
+      objectReference: {fileID: -8546664495325336784, guid: 0a65e2c77b0012041b80954697384416, type: 3}
+    - target: {fileID: 2351309938833582173, guid: d7ed1efa968508a4daacc46e382c1aeb, type: 3}
+      propertyPath: _items.Array.size
+      value: 2
+      objectReference: {fileID: 0}
+    - target: {fileID: 2351309938833582173, guid: d7ed1efa968508a4daacc46e382c1aeb, type: 3}
+      propertyPath: _items.Array.data[0]
+      value: 
+      objectReference: {fileID: 11400000, guid: 62731d9dd08104207b5969ef5ee1a91a, type: 2}
+    - target: {fileID: 2351309938833582173, guid: d7ed1efa968508a4daacc46e382c1aeb, type: 3}
+      propertyPath: _items.Array.data[1]
+      value: 
+      objectReference: {fileID: 11400000, guid: ad836ec037b6b8eea9b352cca8aca043, type: 2}
     - target: {fileID: 2507157016942541878, guid: d7ed1efa968508a4daacc46e382c1aeb, type: 3}
       propertyPath: panelManager
       value: 
