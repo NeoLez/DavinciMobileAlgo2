@@ -14,8 +14,8 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   id: 1
   icon: {fileID: 21300000, guid: 3c7391fcd7b85c84096d01f74cb85cba, type: 3}
-  towerName: ID_Thing
-  description: ID_Thing
+  towerName: ID_Tower1Name
+  description: ID_Tower1Description
   levels:
   - {fileID: 8682478097807941694, guid: 2801cde315078e841aef32de80f071a4, type: 3}
   - {fileID: 88984754664781621, guid: c6b590ae70cbc5b41b57c25c3eb93724, type: 3}
