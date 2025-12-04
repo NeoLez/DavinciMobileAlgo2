@@ -13,4 +13,6 @@ MonoBehaviour:
   m_Name: AttackPierceLevel
   m_EditorClassIdentifier: 
   statName: Pierce Level
+  statDescription: 
+  statIcon: {fileID: 21300000, guid: 49cd64f262f7ee34bb1c226766539d5c, type: 3}
   id: 5
