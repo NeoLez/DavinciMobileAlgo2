@@ -13829,6 +13829,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 19d342239ebc47e0913a127db67f7228, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
+  uiRaycaster: {fileID: 323044409}
+  eventSystem: {fileID: 0}
 --- !u!1001 &1298591213
 PrefabInstance:
   m_ObjectHideFlags: 0

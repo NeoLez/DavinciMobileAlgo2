@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using UnityEngine;
 
 namespace Root {
     public static class EventManager 
@@ -26,6 +27,7 @@ namespace Root {
     
         public static void Trigger<T>(T eventData) {
             Type eventType = typeof(T);
+            Debug.Log(eventType);
             if (!EventDictionary.TryGetValue(eventType, out var del)) return;
 
             if (del is Action<T> action)
