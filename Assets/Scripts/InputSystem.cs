@@ -19,7 +19,6 @@ namespace Root {
         {
             if (Input.touchCount == 0 && Input.GetMouseButtonDown(0))
             {
-                Debug.Log("mouse");
                 OnTap?.Invoke(Input.mousePosition);
             }
 
@@ -27,10 +26,8 @@ namespace Root {
             {
                 foreach (var touch in Input.touches)
                 {
-                    Debug.Log($"{touch.fingerId} {touch.phase}");
                     if (touch.phase == TouchPhase.Began)
                     {
-                        Debug.Log("tap");
                         OnTap?.Invoke(touch.position);
                     }
                 }

@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3368723478443382011}
   - component: {fileID: 855862721314899402}
   - component: {fileID: 4698471853311980303}
-  - component: {fileID: 3109331042630011346}
   - component: {fileID: -8546664495325336784}
   - component: {fileID: 5268222359113784421}
   - component: {fileID: 1817021589009486649}
@@ -128,24 +127,6 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls: []
---- !u!114 &3109331042630011346
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3308412387309932834}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 95005caa13405db4795aee77cb05cbbe, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _itemName: {fileID: 5066001186422039213}
-  _itemCost: {fileID: 5733658927644232135}
-  _itemRarity: {fileID: 3165198801679071165}
-  _price: 0
-  _itemImage: {fileID: 9152635390475486648}
-  _myButton: {fileID: 4698471853311980303}
 --- !u!114 &-8546664495325336784
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -158,10 +139,9 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 5dbc38975bdb4b7294e7ad750adae421, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  itemName: {fileID: 5066001186422039213}
+  itemName: {fileID: 117068349034487517}
   itemCost: {fileID: 5733658927644232135}
   itemRarity: {fileID: 3165198801679071165}
-  price: 0
   itemImage: {fileID: 9152635390475486648}
   myButton: {fileID: 4698471853311980303}
 --- !u!114 &5268222359113784421

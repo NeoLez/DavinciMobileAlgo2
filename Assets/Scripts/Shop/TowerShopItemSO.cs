@@ -11,5 +11,10 @@ namespace Root.Shop {
         public override void GiveItem() {
             Database.Database.Ins.towerDatabase.UnlockTower(towerToUnlock);
         }
+
+        public override bool CanBeBought()
+        {
+            return !Database.Database.Ins.towerDatabase.IsTowerUnlocked(towerToUnlock);
+        }
     }
 }

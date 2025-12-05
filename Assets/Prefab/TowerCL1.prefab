@@ -52,19 +52,17 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   action:
-    rid: 7099092017688084480
-  TowerSO: {fileID: 11400000, guid: 0acaca0d2489b2098bc8d4c6e6be2ef9, type: 2}
-  upgradeLevel: 0
+    rid: 5379273890673197058
+  TowerSO: {fileID: 11400000, guid: bd157b13afdd9c57a8d9b11334bf0a90, type: 2}
+  upgradeLevel: 1
   enemyLayer:
     serializedVersion: 2
     m_Bits: 64
   references:
     version: 2
     RefIds:
-    - rid: 7099092017688084480
-      type: {class: TowerSummonProjectile, ns: Root.Gameplay, asm: Assembly-CSharp}
-      data:
-        _projectile: {fileID: 4909718974888572379, guid: 1cffd7be40993da4db4d3608e07460ec, type: 3}
+    - rid: 5379273890673197058
+      type: {class: TowerGenerateMoney, ns: Root.Gameplay, asm: Assembly-CSharp}
 --- !u!58 &1467976426437330232
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -144,6 +142,8 @@ MonoBehaviour:
     value: 5
   - stat: {fileID: 11400000, guid: 12843454f4fc59e4c8f7f581f475bf3f, type: 2}
     value: 3
+  - stat: {fileID: 11400000, guid: 6525e5ca070f821b3837783cab0ea6e1, type: 2}
+    value: 2
 --- !u!1001 &2868736120012056545
 PrefabInstance:
   m_ObjectHideFlags: 0

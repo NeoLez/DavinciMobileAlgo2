@@ -146,15 +146,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 18bb8f75e5b4daf40a98de2b6594c18d, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  _items:
-  - {fileID: 11400000, guid: 7fc9cbecd35d5cc499ba038a5e1a9434, type: 2}
-  - {fileID: 11400000, guid: 0cf8259cebcbc7949af56e5f044f6bf7, type: 2}
-  - {fileID: 11400000, guid: 81cb9300c4a8e7f46b0317405efcc217, type: 2}
-  - {fileID: 11400000, guid: 311921e0eae68bb4e90e560607343a82, type: 2}
-  - {fileID: 11400000, guid: f7aa1451080a6d64690fc8cb4ae8e814, type: 2}
-  - {fileID: 11400000, guid: 203321c6f2afbfb45a810d3a04b28300, type: 2}
-  - {fileID: 11400000, guid: fc2bbc7ef3554c643a00ebe7010998a3, type: 2}
-  - {fileID: 11400000, guid: fb4a70b0b9f754c4e81952c40f101e56, type: 2}
+  _items: []
   _contentParent: {fileID: 0}
   _buttonPrefab: {fileID: 3109331042630011346, guid: 0a65e2c77b0012041b80954697384416, type: 3}
 --- !u!1 &8703422494766035338
