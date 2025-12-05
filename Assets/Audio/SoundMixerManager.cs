@@ -9,6 +9,12 @@ namespace Root
     {
         [SerializeField] private AudioMixer audioMixer;
 
+
+        private void Awake()
+        {
+            DontDestroyOnLoad(this);
+            DontDestroyOnLoad(audioMixer);
+        }
         public void SetGlobalVolume(float level)
         {
             audioMixer.SetFloat("Global Volumen", Mathf.Log10(level) * 20f);

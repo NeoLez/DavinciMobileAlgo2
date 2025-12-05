@@ -13,8 +13,12 @@ namespace Root
 
         private void Awake()
         {
+            DontDestroyOnLoad(this);
+            DontDestroyOnLoad(soundFXobject);
+
             if (Instance == null)
             {
+
                 Instance = this;
             }
             
