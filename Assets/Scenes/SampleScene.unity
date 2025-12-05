@@ -9340,7 +9340,7 @@ MonoBehaviour:
   waveIndex: 0
   wavesFinished: 0
   enemiesSpawnedThisWave: 0
-  running: 0
+  running: 1
   totalSpawnedEnemies: 0
 --- !u!4 &718154495
 Transform:
@@ -9351,7 +9351,7 @@ Transform:
   m_GameObject: {fileID: 718154493}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: -5.39, y: -12.95, z: -0.583}
+  m_LocalPosition: {x: -5.39, y: -18.56, z: -0.583}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 1
   m_Children: []
@@ -15232,6 +15232,9 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   lost: 0
+  victoryScene: Victory
+  defeatScene: Defeat
+  currencyReward: 20
   playerHealth: 10
   enemyPath:
   - {fileID: 2141121962}

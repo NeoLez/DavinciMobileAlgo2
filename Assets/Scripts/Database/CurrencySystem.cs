@@ -5,12 +5,12 @@ namespace Root.Database {
         private const string CURRENT_CURRENCY = "CurrentCurrency";
         private int currency;
         private const int START_CURRENCY = 10;
+        public int lastReward { get; set; }
 
         public CurrencySystem() {
             LoadGame();
         }
-
-
+        
         public int GetCurrency() {
             return currency;
         }
