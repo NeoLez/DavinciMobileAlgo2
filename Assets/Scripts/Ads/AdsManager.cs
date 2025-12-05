@@ -36,6 +36,10 @@ public class AdsManager : MonoBehaviour
     public void SubscribeToRewardedAdResult(Action<UnityAdsShowCompletionState> callback) {
         rewardedController.OnAddCompleted += callback;
     }
+    
+    public void UnsubscribeToRewardedAdResult(Action<UnityAdsShowCompletionState> callback) {
+        rewardedController.OnAddCompleted -= callback;
+    }
 
     private IEnumerator DisplayBannerAd()
     {
