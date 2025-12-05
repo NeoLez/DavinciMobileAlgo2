@@ -52,6 +52,7 @@ MonoBehaviour:
   movementBehaviour:
     rid: 2049209859602907137
   health: 2
+  cashReward: 1
   references:
     version: 2
     RefIds:
