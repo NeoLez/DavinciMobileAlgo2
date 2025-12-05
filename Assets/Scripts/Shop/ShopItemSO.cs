@@ -24,6 +24,8 @@ namespace Root.Shop {
 
         public abstract void GiveItem();
 
+        public abstract bool CanBeBought();
+
         public enum ShopItemStatus {
             Available,
             Locked,

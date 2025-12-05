@@ -14,8 +14,11 @@ public class ShopItemButtonCreator : MonoBehaviour
     {
         for (int i = 0; i < _items.Length; i++)
         {
-            ShopItemButton newItem = Instantiate(_buttonPrefab, _contentParent);
-            newItem.SetItem(_items[i]);
+            if (_items[i].CanBeBought())
+            {
+                ShopItemButton newItem = Instantiate(_buttonPrefab, _contentParent);
+                newItem.SetItem(_items[i]);
+            }
         }
     }
 }

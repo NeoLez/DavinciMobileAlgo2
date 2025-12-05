@@ -26,7 +26,6 @@ namespace Root {
             {
                 foreach (var touch in Input.touches)
                 {
-                    Debug.Log($"{touch.fingerId} {touch.phase}");
                     if (touch.phase == TouchPhase.Began)
                     {
                         OnTap?.Invoke(touch.position);
