@@ -134,6 +134,7 @@ GameObject:
   - component: {fileID: 81406742}
   - component: {fileID: 81406744}
   - component: {fileID: 81406743}
+  - component: {fileID: 81406745}
   m_Layer: 5
   m_Name: DineroText (TMP)
   m_TagString: Untagged
@@ -257,6 +258,18 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 81406741}
   m_CullTransparentMesh: 1
+--- !u!114 &81406745
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 81406741}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 40a7f0797245b8203a500285a91ef95c, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1 &108313817
 GameObject:
   m_ObjectHideFlags: 0
@@ -542,6 +555,11 @@ Transform:
   m_Children: []
   m_Father: {fileID: 714925347}
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!1 &767038774 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 6558543585226257121, guid: d0abd15e3881f5c469d2aabef28db173, type: 3}
+  m_PrefabInstance: {fileID: 1950041427385588661}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &772806103
 GameObject:
   m_ObjectHideFlags: 0
@@ -2027,6 +2045,14 @@ PrefabInstance:
     - target: {fileID: 4218899398017934139, guid: d0abd15e3881f5c469d2aabef28db173, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
       value: 
+      objectReference: {fileID: 9146175511235067157}
+    - target: {fileID: 4218899398017934139, guid: d0abd15e3881f5c469d2aabef28db173, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: Reset
+      objectReference: {fileID: 0}
+    - target: {fileID: 4218899398017934139, guid: d0abd15e3881f5c469d2aabef28db173, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Root.ResetGameData, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 6558543585226257121, guid: d0abd15e3881f5c469d2aabef28db173, type: 3}
       propertyPath: m_Name
@@ -2116,7 +2142,10 @@ PrefabInstance:
     - {fileID: 371662535459009673, guid: d0abd15e3881f5c469d2aabef28db173, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 6558543585226257121, guid: d0abd15e3881f5c469d2aabef28db173, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 9146175511235067157}
   m_SourcePrefab: {fileID: 100100000, guid: d0abd15e3881f5c469d2aabef28db173, type: 3}
 --- !u!114 &6256995254571376146 stripped
 MonoBehaviour:
@@ -3127,6 +3156,18 @@ RectTransform:
   m_CorrespondingSourceObject: {fileID: 7066203080264510879, guid: d0abd15e3881f5c469d2aabef28db173, type: 3}
   m_PrefabInstance: {fileID: 1950041427385588661}
   m_PrefabAsset: {fileID: 0}
+--- !u!114 &9146175511235067157
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 767038774}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: aa39847d461b4823a51f1c418e14e7c1, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
 --- !u!1660057539 &9223372036854775807
 SceneRoots:
   m_ObjectHideFlags: 0
