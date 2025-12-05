@@ -9,6 +9,7 @@ namespace Root.Gameplay {
         private Stats.Stats stats;
         [SerializeField] private int health;
         [SerializeField] private int cashReward;
+        [SerializeField] private GameObject MoneyImagePrefab;
         private bool isDead;
 
         private void Start() {
@@ -49,8 +50,13 @@ namespace Root.Gameplay {
             
             if(isDead) return;
             isDead = true;
+
+            if (cashReward > 0)
+            {
+                Instantiate(MoneyImagePrefab, transform.position, Quaternion.identity);
+                Level.Ins.gold.AddGold(cashReward);
+            }
             
-            Level.Ins.gold.AddGold(cashReward);
             
             EventManager.Trigger(new EventPayloads.EnemyDied());
             Destroy(gameObject);

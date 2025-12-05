@@ -52,7 +52,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   action:
-    rid: 5379273890673197058
+    rid: 5379273896666071042
   TowerSO: {fileID: 11400000, guid: bd157b13afdd9c57a8d9b11334bf0a90, type: 2}
   upgradeLevel: 1
   enemyLayer:
@@ -61,8 +61,10 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 5379273890673197058
+    - rid: 5379273896666071042
       type: {class: TowerGenerateMoney, ns: Root.Gameplay, asm: Assembly-CSharp}
+      data:
+        MoneyImagePrefab: {fileID: 5500153333339433495, guid: 3680ec74e8ed33446bc8015243c12c17, type: 3}
 --- !u!58 &1467976426437330232
 CircleCollider2D:
   m_ObjectHideFlags: 0

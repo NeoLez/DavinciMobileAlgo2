@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: TowerOP
   m_EditorClassIdentifier: 
   _cost: 10
-  _itemName: ID_Thing
+  _itemName: ID_Tower2Name
   _status: 0
   towerToUnlock: {fileID: 11400000, guid: 5072c3bb41f8df79bb4f454654edc32a, type: 2}

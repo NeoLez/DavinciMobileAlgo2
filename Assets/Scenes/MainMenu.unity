@@ -2358,11 +2358,11 @@ PrefabInstance:
       objectReference: {fileID: 8625318010719181169}
     - target: {fileID: 717850691250660231, guid: d7ed1efa968508a4daacc46e382c1aeb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
-      value: ComenzarNivel
+      value: CambiarEscenaOnClick
       objectReference: {fileID: 0}
     - target: {fileID: 717850691250660231, guid: d7ed1efa968508a4daacc46e382c1aeb, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
-      value: Root.BotonIniciarNivel, Assembly-CSharp
+      value: BotonCambiarEscena, Assembly-CSharp
       objectReference: {fileID: 0}
     - target: {fileID: 750711364158584212, guid: d7ed1efa968508a4daacc46e382c1aeb, type: 3}
       propertyPath: m_Delegates.Array.data[0].callback.m_PersistentCalls.m_Calls.Array.data[0].m_Target
@@ -3180,11 +3180,10 @@ MonoBehaviour:
   m_GameObject: {fileID: 8625318010719181168}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 1446a7692870c2ae0872cbb67cc0e74a, type: 3}
+  m_Script: {fileID: 11500000, guid: 0aa0a50194001ae4a9a6411e3036b854, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombreEscenaNivel: SampleScene
-  staminaCost: 50
+  nombreEscena: LevelSelector
 --- !u!224 &8903317853038905070 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 8563046891582770478, guid: 9b900e14b177e1e419c6e3e5250d0570, type: 3}
