@@ -1,3 +1,4 @@
+using System;
 using System.Threading.Tasks;
 using Unity.Services.Authentication;
 using Unity.Services.Core;
@@ -5,7 +6,9 @@ using Unity.Services.RemoteConfig;
 using UnityEngine;
 
 namespace Root.Utils {
-    public static class RemoteManager {
+    public static class RemoteManager
+    {
+        public static event Action OnInitialized;
         private struct userAttributes { }
         private struct appAttributes { }
         private static async Task InitializeRemoteConfigAsync() {
@@ -17,12 +20,13 @@ namespace Root.Utils {
         }
     
         [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSplashScreen)]
-        private static async Task Initialize() {
+        public static async Task Initialize() {
             if (Utilities.CheckForInternetConnection()) {
                 await InitializeRemoteConfigAsync();
             }
             
             RemoteConfigService.Instance.FetchConfigs(new userAttributes(), new appAttributes());
+            OnInitialized?.Invoke();
         }
 
 

@@ -1,4 +1,5 @@
-﻿using System.Collections.Generic;
+﻿using System;
+using System.Collections.Generic;
 using Root.Gameplay;
 using UnityEngine;
 using UnityEngine.EventSystems;
@@ -9,11 +10,14 @@ namespace Root {
     public class Click : MonoBehaviour {
         private TowerSO TowerToPlace;
         private void Start() {
-            EventManager.Subscribe<EventPayloads.MenuSelectedTowerSO>(ctx => {
-                TowerToPlace = ctx.TowerSO;
-            });
+            EventManager.Subscribe<EventPayloads.MenuSelectedTowerSO>(HandleTowerSelected);
 
             InputSystem.Instance.OnTap += Tap;
+        }
+
+        private void HandleTowerSelected(EventPayloads.MenuSelectedTowerSO ctx)
+        {
+            TowerToPlace = ctx.TowerSO;
         }
 
         private void Tap(Vector2 touch)
@@ -32,7 +36,13 @@ namespace Root {
                 }
             }
         }
-        
+
+        private void OnDestroy()
+        {
+            InputSystem.Instance.OnTap -= Tap;
+            EventManager.Unsubscribe<EventPayloads.MenuSelectedTowerSO>(HandleTowerSelected);
+        }
+
         public GraphicRaycaster uiRaycaster;
         public EventSystem eventSystem;
 

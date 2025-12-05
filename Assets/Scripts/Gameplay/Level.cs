@@ -1,3 +1,4 @@
+using System;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
@@ -45,5 +46,11 @@ namespace Root.Gameplay {
         public float PathLength { get; private set; }
         public Grid grid;
         public IngameGold gold;
+
+        private void OnDestroy()
+        {
+            EventManager.Unsubscribe<EventPayloads.EnemyReachedEnd>(TakeDamage);
+            EventManager.Unsubscribe<EventPayloads.EnemiesEliminated>(OnEnemiesEliminated);
+        }
     }
 }

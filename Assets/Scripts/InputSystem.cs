@@ -9,7 +9,7 @@ namespace Root {
         private void Awake()
         {
             Instance = this;
-            DontDestroyOnLoad(this);
+            DontDestroyOnLoad(gameObject);
         }
 
         public event Action<Vector2> OnTap;

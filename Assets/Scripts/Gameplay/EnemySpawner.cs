@@ -16,7 +16,12 @@ namespace Root.Gameplay {
         private bool raisedWin;
 
         private void Awake() {
-            EventManager.Subscribe<EventPayloads.EnemyDied>((_ => totalSpawnedEnemies--));
+            EventManager.Subscribe<EventPayloads.EnemyDied>(OnEnemyDied);
+        }
+
+        private void OnEnemyDied(EventPayloads.EnemyDied _)
+        {
+            totalSpawnedEnemies--;
         }
 
         private void Update() {
@@ -47,6 +52,11 @@ namespace Root.Gameplay {
 
         public bool HaveWavesFinished() {
             return wavesFinished;
+        }
+
+        private void OnDestroy()
+        {
+            EventManager.Unsubscribe<EventPayloads.EnemyDied>(OnEnemyDied);
         }
     }
 }

@@ -25,11 +25,9 @@ namespace Root.Gameplay {
             return value;
         }
 
-        public bool SetTower(Vector2 pos, Tower tower) {
-            if (blockedPositions.Contains(pos) || GetTower(pos) is not null) return false;
+        public void SetTower(Vector2 pos, Tower tower) {
             tower.transform.position = pos;
             positions[pos] = tower;
-            return true;
         }
 
         public bool RemoveTower(Vector2 pos) {
@@ -42,6 +40,7 @@ namespace Root.Gameplay {
 
         public bool BuyTower(Vector2 pos, TowerSO towerSO) {
             if (GetTower(pos) != null) return false;
+            if (blockedPositions.Contains(pos)) return false;
             if (!Level.Ins.gold.ConsumeGold(towerSO.levelCosts[0])) return false;
             
             GameObject tow = Instantiate(towerSO.levels[0]);

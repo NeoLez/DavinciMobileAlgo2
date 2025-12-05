@@ -1,4 +1,3 @@
-using System;
 using UnityEngine;
 
 namespace Root.UI
@@ -9,18 +8,25 @@ namespace Root.UI
         [SerializeField] private GameObject upgradeMenu;
         private void Awake()
         {
-            EventManager.Subscribe<EventPayloads.GridSelectedTower>(a =>
-            {
-                buyMenu.SetActive(false);
-                upgradeMenu.GetComponent<UpgradeMenu>().SetInfo(a.tower, a.gridPosition);
-                upgradeMenu.SetActive(true);
-            });
+            EventManager.Subscribe<EventPayloads.GridSelectedTower>(HandleSelectedTower);
+        }
+
+        private void HandleSelectedTower(EventPayloads.GridSelectedTower ctx)
+        {
+            buyMenu.SetActive(false);
+            upgradeMenu.GetComponent<UpgradeMenu>().SetInfo(ctx.tower, ctx.gridPosition);
+            upgradeMenu.SetActive(true);
         }
 
         public void SwitchToBuyMenu()
         {
             buyMenu.SetActive(true);
             upgradeMenu.SetActive(false);
+        }
+
+        private void OnDestroy()
+        {
+            EventManager.Unsubscribe<EventPayloads.GridSelectedTower>(HandleSelectedTower);
         }
     }
 }
