@@ -37,5 +37,11 @@ namespace Root.Database {
         public void SaveGame() {
             PlayerPrefs.SetInt(CURRENT_CURRENCY, currency);
         }
+
+        public void ResetData()
+        {
+            currency = START_CURRENCY;
+            SaveGame();
+        }
     }
 }
