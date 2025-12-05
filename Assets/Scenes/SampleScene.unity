@@ -38612,7 +38612,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 430916535996501432, guid: 40e20e0150c8bd244ab652407c18e6a1, type: 3}
       propertyPath: panelIndex
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 430916535996501432, guid: 40e20e0150c8bd244ab652407c18e6a1, type: 3}
       propertyPath: panelManager
@@ -38636,7 +38636,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 2848216342038273631, guid: 40e20e0150c8bd244ab652407c18e6a1, type: 3}
       propertyPath: m_IsActive
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2869704073186167099, guid: 40e20e0150c8bd244ab652407c18e6a1, type: 3}
       propertyPath: m_SortingOrder
@@ -38644,7 +38644,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 4767647932899094706, guid: 40e20e0150c8bd244ab652407c18e6a1, type: 3}
       propertyPath: panelIndex
-      value: 1
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4767647932899094706, guid: 40e20e0150c8bd244ab652407c18e6a1, type: 3}
       propertyPath: panelManager
@@ -38770,7 +38770,7 @@ PrefabInstance:
     m_RemovedGameObjects: []
     m_AddedGameObjects:
     - targetCorrespondingSourceObject: {fileID: 7042880916870868460, guid: 40e20e0150c8bd244ab652407c18e6a1, type: 3}
-      insertIndex: 1
+      insertIndex: -1
       addedObject: {fileID: 1982529961}
     - targetCorrespondingSourceObject: {fileID: 5084183154078086497, guid: 40e20e0150c8bd244ab652407c18e6a1, type: 3}
       insertIndex: -1
