@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: TowerCrystal
   m_EditorClassIdentifier: 
   _cost: 5
-  _itemName: ID_Thing
+  _itemName: ID_Tower3Name
   _status: 0
   towerToUnlock: {fileID: 11400000, guid: bd157b13afdd9c57a8d9b11334bf0a90, type: 2}

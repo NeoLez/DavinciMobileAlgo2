@@ -53,6 +53,7 @@ MonoBehaviour:
     rid: 2049209859602907137
   health: 2
   cashReward: 1
+  MoneyImagePrefab: {fileID: 5500153333339433495, guid: 3680ec74e8ed33446bc8015243c12c17, type: 3}
   references:
     version: 2
     RefIds:

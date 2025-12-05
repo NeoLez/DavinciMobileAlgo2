@@ -257,6 +257,18 @@ PrefabInstance:
       propertyPath: m_text
       value: Nivel 1
       objectReference: {fileID: 0}
+    - target: {fileID: 3751993186582162803, guid: b7e36816c351cb249aa730e018df97a4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_Target
+      value: 
+      objectReference: {fileID: 388805806}
+    - target: {fileID: 3751993186582162803, guid: b7e36816c351cb249aa730e018df97a4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_MethodName
+      value: ComenzarNivel
+      objectReference: {fileID: 0}
+    - target: {fileID: 3751993186582162803, guid: b7e36816c351cb249aa730e018df97a4, type: 3}
+      propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.data[0].m_TargetAssemblyTypeName
+      value: Root.BotonIniciarNivel, Assembly-CSharp
+      objectReference: {fileID: 0}
     - target: {fileID: 4114013793255612411, guid: b7e36816c351cb249aa730e018df97a4, type: 3}
       propertyPath: m_Name
       value: Nivel 1 Button
@@ -349,16 +361,39 @@ PrefabInstance:
       propertyPath: OutputAudioMixerGroup
       value: 
       objectReference: {fileID: -528939291314825190, guid: e63f7ee6ac53e2642a8d3eb503d0b5c5, type: 2}
-    m_RemovedComponents: []
+    m_RemovedComponents:
+    - {fileID: 2374778320530067403, guid: b7e36816c351cb249aa730e018df97a4, type: 3}
     m_RemovedGameObjects: []
     m_AddedGameObjects: []
-    m_AddedComponents: []
+    m_AddedComponents:
+    - targetCorrespondingSourceObject: {fileID: 4114013793255612411, guid: b7e36816c351cb249aa730e018df97a4, type: 3}
+      insertIndex: -1
+      addedObject: {fileID: 388805806}
   m_SourcePrefab: {fileID: 100100000, guid: b7e36816c351cb249aa730e018df97a4, type: 3}
 --- !u!224 &388805804 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 5713994422648526077, guid: b7e36816c351cb249aa730e018df97a4, type: 3}
   m_PrefabInstance: {fileID: 388805803}
   m_PrefabAsset: {fileID: 0}
+--- !u!1 &388805805 stripped
+GameObject:
+  m_CorrespondingSourceObject: {fileID: 4114013793255612411, guid: b7e36816c351cb249aa730e018df97a4, type: 3}
+  m_PrefabInstance: {fileID: 388805803}
+  m_PrefabAsset: {fileID: 0}
+--- !u!114 &388805806
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 388805805}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 1446a7692870c2ae0872cbb67cc0e74a, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  nombreEscenaNivel: SampleScene
+  staminaCost: 50
 --- !u!1001 &407165527
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1107,6 +1142,10 @@ PrefabInstance:
     - target: {fileID: 4894087950892070195, guid: 86f13b6630f036e408f7c4f57ad3eccd, type: 3}
       propertyPath: _id
       value: ID_MenuPrincipalButton
+      objectReference: {fileID: 0}
+    - target: {fileID: 5811346854957164316, guid: 86f13b6630f036e408f7c4f57ad3eccd, type: 3}
+      propertyPath: nombreEscena
+      value: MainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 6702646847397418562, guid: 86f13b6630f036e408f7c4f57ad3eccd, type: 3}
       propertyPath: m_Name
