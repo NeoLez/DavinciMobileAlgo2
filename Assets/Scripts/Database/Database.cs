@@ -39,5 +39,12 @@ namespace Root.Database {
             towerDatabase.SaveGame();
             currencySystem.SaveGame();
         }
+
+        public void ResetData()
+        {
+            towerDatabase.ResetData();
+            currencySystem.ResetData();
+            staminaSystem.ResetData();
+        }
     }
 }

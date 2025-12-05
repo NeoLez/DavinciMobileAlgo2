@@ -5,12 +5,12 @@ namespace Root.Database {
         private const string CURRENT_CURRENCY = "CurrentCurrency";
         private int currency;
         private const int START_CURRENCY = 10;
+        public int lastReward { get; set; }
 
         public CurrencySystem() {
             LoadGame();
         }
-
-
+        
         public int GetCurrency() {
             return currency;
         }
@@ -36,6 +36,12 @@ namespace Root.Database {
 
         public void SaveGame() {
             PlayerPrefs.SetInt(CURRENT_CURRENCY, currency);
+        }
+
+        public void ResetData()
+        {
+            currency = START_CURRENCY;
+            SaveGame();
         }
     }
 }

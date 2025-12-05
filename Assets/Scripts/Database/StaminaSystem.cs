@@ -96,6 +96,12 @@ namespace Root {
             return maxStamina;
         }
 
+        public void ResetData()
+        {
+            currentStamina = maxStamina;
+            SaveGame();
+        }
+
         public int GetSecondsUntilRegen() {
             return (int)(lastStaminaTime + regenerationTime - DateTimeOffset.UtcNow.ToUnixTimeSeconds());
         }

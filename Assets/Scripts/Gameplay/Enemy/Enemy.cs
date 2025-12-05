@@ -8,6 +8,7 @@ namespace Root.Gameplay {
         [SerializeReference, SubclassSelector] private EnemyMovementBehaviour movementBehaviour;
         private Stats.Stats stats;
         [SerializeField] private int health;
+        [SerializeField] private int cashReward;
         private bool isDead;
 
         private void Start() {
@@ -48,6 +49,8 @@ namespace Root.Gameplay {
             
             if(isDead) return;
             isDead = true;
+            
+            Level.Ins.gold.AddGold(cashReward);
             
             EventManager.Trigger(new EventPayloads.EnemyDied());
             Destroy(gameObject);
