@@ -2631,6 +2631,10 @@ PrefabInstance:
       propertyPath: m_Color.r
       value: 1
       objectReference: {fileID: 0}
+    - target: {fileID: 4002862150636983949, guid: d7ed1efa968508a4daacc46e382c1aeb, type: 3}
+      propertyPath: m_Sprite
+      value: 
+      objectReference: {fileID: 21300000, guid: 10c4ac89eca71524c92a9c7b49e2a596, type: 3}
     - target: {fileID: 4024690157277877208, guid: d7ed1efa968508a4daacc46e382c1aeb, type: 3}
       propertyPath: m_IsActive
       value: 1
@@ -2929,15 +2933,15 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7782952285870018594, guid: d7ed1efa968508a4daacc46e382c1aeb, type: 3}
       propertyPath: m_LocalScale.x
-      value: 2.2612543
+      value: 2.1230366
       objectReference: {fileID: 0}
     - target: {fileID: 7782952285870018594, guid: d7ed1efa968508a4daacc46e382c1aeb, type: 3}
       propertyPath: m_LocalScale.y
-      value: 2.2612543
+      value: 2.8386667
       objectReference: {fileID: 0}
     - target: {fileID: 7782952285870018594, guid: d7ed1efa968508a4daacc46e382c1aeb, type: 3}
       propertyPath: m_LocalScale.z
-      value: 2.2612543
+      value: 2.4410238
       objectReference: {fileID: 0}
     - target: {fileID: 7782952285870018594, guid: d7ed1efa968508a4daacc46e382c1aeb, type: 3}
       propertyPath: m_AnchoredPosition.x
@@ -3034,6 +3038,18 @@ PrefabInstance:
     - target: {fileID: 8564284263248787381, guid: d7ed1efa968508a4daacc46e382c1aeb, type: 3}
       propertyPath: m_IsActive
       value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 8579101520751418435, guid: d7ed1efa968508a4daacc46e382c1aeb, type: 3}
+      propertyPath: m_fontSize
+      value: 21.2
+      objectReference: {fileID: 0}
+    - target: {fileID: 8579101520751418435, guid: d7ed1efa968508a4daacc46e382c1aeb, type: 3}
+      propertyPath: m_margin.w
+      value: 3.356349
+      objectReference: {fileID: 0}
+    - target: {fileID: 8579101520751418435, guid: d7ed1efa968508a4daacc46e382c1aeb, type: 3}
+      propertyPath: m_margin.y
+      value: 4.0756607
       objectReference: {fileID: 0}
     - target: {fileID: 8754954143713509062, guid: d7ed1efa968508a4daacc46e382c1aeb, type: 3}
       propertyPath: m_AnchorMax.x
