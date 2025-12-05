@@ -7,12 +7,18 @@ namespace Root
 {
     public class SoundMixerManager : MonoBehaviour
     {
+        public static SoundMixerManager Instance;
         [SerializeField] private AudioMixer audioMixer;
-
 
         private void Awake()
         {
-            DontDestroyOnLoad(this);
+            if (Instance != null && Instance != this)
+            {
+                Destroy(this.gameObject);
+                return;
+            }
+            Instance = this;
+            DontDestroyOnLoad(this.gameObject);
             DontDestroyOnLoad(audioMixer);
         }
         public void SetGlobalVolume(float level)

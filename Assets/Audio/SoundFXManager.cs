@@ -28,8 +28,17 @@ namespace Root
        public void PlaySound(AudioClip audioclip, Transform spawnTransform , float volume)
         {
 
-            // spawn in gameObject
-            AudioSource audioSource = Instantiate(soundFXobject , spawnTransform.position, Quaternion.identity);  //get the AudioSource component
+            
+            AudioSource audioSource = Instantiate(soundFXobject, spawnTransform.position, Quaternion.identity);
+
+            // Forzar activación del objeto y sus padres
+            Transform t = audioSource.transform;
+            while (t != null)
+            {
+                t.gameObject.SetActive(true);
+                t = t.parent;
+            }
+            audioSource.enabled = true;
 
             //assign the audioclip
             audioSource.clip = audioclip;
