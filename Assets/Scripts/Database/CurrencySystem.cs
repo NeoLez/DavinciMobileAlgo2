@@ -1,14 +1,16 @@
+using Root.Utils;
 using UnityEngine;
 
 namespace Root.Database {
     public class CurrencySystem {
         private const string CURRENT_CURRENCY = "CurrentCurrency";
         private int currency;
-        private const int START_CURRENCY = 10;
+        private int startCurrency;
         public int lastReward { get; set; }
 
         public CurrencySystem() {
             LoadGame();
+            startCurrency = RemoteManager.GetInt("startCurrency");
         }
         
         public int GetCurrency() {
@@ -31,7 +33,7 @@ namespace Root.Database {
 
 
         public void LoadGame() {
-            currency = PlayerPrefs.GetInt(CURRENT_CURRENCY, START_CURRENCY);
+            currency = PlayerPrefs.GetInt(CURRENT_CURRENCY, startCurrency);
         }
 
         public void SaveGame() {
@@ -40,7 +42,7 @@ namespace Root.Database {
 
         public void ResetData()
         {
-            currency = START_CURRENCY;
+            currency = startCurrency;
             SaveGame();
         }
     }

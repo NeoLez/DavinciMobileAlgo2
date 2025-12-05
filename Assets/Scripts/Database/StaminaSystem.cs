@@ -1,4 +1,5 @@
 using System;
+using Root.Utils;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -6,11 +7,12 @@ namespace Root {
     public class StaminaSystem : MonoBehaviour {
         private long lastStaminaTime;
 
-        [SerializeField] private int maxStamina = 50;
+        [SerializeField] private int maxStamina = 100;
         public int currentStamina;
 
         [SerializeField] private int regenerationTime = 60;
         private bool isRegenerating;
+        [SerializeField] private bool shouldStartFull;
         
         private const string CURRENT_STAMINA =  "CurrentStamina";
         private const string LAST_STAMINA_TIME =  "LastStaminaTime";
@@ -18,6 +20,10 @@ namespace Root {
         private void Start() {
             LoadGame();
             DontDestroyOnLoad(this);
+
+            shouldStartFull = RemoteManager.GetBool("staminaShouldStartFull");
+            regenerationTime = RemoteManager.GetInt("staminaRegenerationTime");
+            maxStamina = RemoteManager.GetInt("maxStamina");
         }
 
         private void Update() {
@@ -72,7 +78,15 @@ namespace Root {
         }
         
         private void LoadGame() {
-            currentStamina = PlayerPrefs.GetInt(CURRENT_STAMINA, maxStamina);
+            if (shouldStartFull)
+            {
+                currentStamina = PlayerPrefs.GetInt(CURRENT_STAMINA, maxStamina);
+            }
+            else
+            {
+                currentStamina = PlayerPrefs.GetInt(CURRENT_STAMINA, 0);
+            }
+            
             lastStaminaTime = long.Parse(PlayerPrefs.GetString(LAST_STAMINA_TIME, DateTimeOffset.UtcNow.ToUnixTimeSeconds().ToString()));
             if (IsStaminaFull()) {
                 StopRegeneration();
