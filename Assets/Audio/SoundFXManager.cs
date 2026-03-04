@@ -1,5 +1,3 @@
-using System.Collections;
-using System.Collections.Generic;
 using UnityEngine;
 
 namespace Root
@@ -18,7 +16,6 @@ namespace Root
 
             if (Instance == null)
             {
-
                 Instance = this;
             }
             
@@ -31,7 +28,7 @@ namespace Root
             
             AudioSource audioSource = Instantiate(soundFXobject, spawnTransform.position, Quaternion.identity);
 
-            // Forzar activación del objeto y sus padres
+            // Forzar activaciï¿½n del objeto y sus padres
             Transform t = audioSource.transform;
             while (t != null)
             {
@@ -56,8 +53,5 @@ namespace Root
             Destroy(audioSource.gameObject, clipLength);
 
         }
-
-
-
     }
 }
