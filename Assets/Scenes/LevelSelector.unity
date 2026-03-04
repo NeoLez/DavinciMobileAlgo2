@@ -392,7 +392,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 1446a7692870c2ae0872cbb67cc0e74a, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  nombreEscenaNivel: SampleScene
+  nombreEscenaNivel: Nivel1
   staminaCost: 50
 --- !u!1001 &407165527
 PrefabInstance:
