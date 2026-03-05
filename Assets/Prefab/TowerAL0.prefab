@@ -50,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   action:
-    rid: 7099092017688084480
+    rid: 8825109252694081536
   TowerSO: {fileID: 11400000, guid: 0acaca0d2489b2098bc8d4c6e6be2ef9, type: 2}
   upgradeLevel: 0
   enemyLayer:
@@ -59,10 +59,10 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 7099092017688084480
+    - rid: 8825109252694081536
       type: {class: TowerSummonProjectile, ns: Root.Gameplay, asm: Assembly-CSharp}
       data:
-        _projectile: {fileID: 4909718974888572379, guid: 1cffd7be40993da4db4d3608e07460ec, type: 3}
+        _projectile: {fileID: 4909718974888572379, guid: 478ad1dfec821d4408be7f0359460c24, type: 3}
 --- !u!58 &1467976426437330232
 CircleCollider2D:
   m_ObjectHideFlags: 0

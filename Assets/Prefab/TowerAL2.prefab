@@ -14,7 +14,6 @@ GameObject:
   - component: {fileID: 1204811597746629742}
   - component: {fileID: 9082413717018432710}
   - component: {fileID: -5526709657102404539}
-  - component: {fileID: 3950201278911405643}
   m_Layer: 8
   m_Name: TowerAL2
   m_TagString: Untagged
@@ -63,7 +62,7 @@ MonoBehaviour:
     - rid: 7099092017688084480
       type: {class: TowerSummonProjectile, ns: Root.Gameplay, asm: Assembly-CSharp}
       data:
-        _projectile: {fileID: 4909718974888572379, guid: 1cffd7be40993da4db4d3608e07460ec, type: 3}
+        _projectile: {fileID: 4909718974888572379, guid: 478ad1dfec821d4408be7f0359460c24, type: 3}
 --- !u!58 &2480473189887464405
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -161,20 +160,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   inflateAmount: 1.2
   animationDuration: 0.2
---- !u!114 &3950201278911405643
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1074697777703593023}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 4c963a31194fbd1448de9dbb684c5aaf, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  inflateAmount: 1.2
-  animationDuration: 0.15
 --- !u!1001 &7336390286962252331
 PrefabInstance:
   m_ObjectHideFlags: 0
