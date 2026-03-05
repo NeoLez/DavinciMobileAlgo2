@@ -16,6 +16,9 @@ namespace Root {
         
         private const string CURRENT_STAMINA =  "CurrentStamina";
         private const string LAST_STAMINA_TIME =  "LastStaminaTime";
+        
+        private const string StaminaInNotificationTitleID = "ID_StaminaNotificationTitle";
+        private const string StaminaInNotificationDescriptionID = "ID_StaminaNotificationDescription";
 
         private void Start() {
             LoadGame();
@@ -120,6 +123,10 @@ namespace Root {
             return (int)(lastStaminaTime + regenerationTime - DateTimeOffset.UtcNow.ToUnixTimeSeconds());
         }
 
+        public float GetSecondsUntilFullRegen() {
+            return lastStaminaTime + ((maxStamina - currentStamina) * regenerationTime) - DateTimeOffset.UtcNow.ToUnixTimeSeconds(); 
+        }
+
         private void OnApplicationFocus(bool hasFocus) {
             if (!hasFocus) {
                 SaveGame();
@@ -135,6 +142,13 @@ namespace Root {
 
         private void OnApplicationQuit() {
             SaveGame();
+
+            if (currentStamina >= maxStamina - 1) return;
+            
+            Assert.IsTrue(Localization.Ins.IsInitialized(), "Localization Service not yet initialized");
+            var staminaNotificationTitleString = Localization.Ins.GetTranslate(StaminaInNotificationTitleID);
+            var staminaNotificationDescriptionString = Localization.Ins.GetTranslate(StaminaInNotificationDescriptionID);
+            MobileNotificationManager.DisplayNotification(MobileNotificationManager.NotifChannelID, staminaNotificationTitleString, staminaNotificationDescriptionString, IconSelecter.myicon_0, IconSelecter.myicon_1, DateTime.Now.AddSeconds(GetSecondsUntilFullRegen() + 1));
         }
     }
 }

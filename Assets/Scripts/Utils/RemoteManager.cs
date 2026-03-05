@@ -6,8 +6,8 @@ using Unity.Services.RemoteConfig;
 using UnityEngine;
 
 namespace Root.Utils {
-    public static class RemoteManager
-    {
+    public static class RemoteManager {
+        private static bool _isInitialized;
         public static event Action OnInitialized;
         private struct userAttributes { }
         private struct appAttributes { }
@@ -26,8 +26,11 @@ namespace Root.Utils {
             }
             
             RemoteConfigService.Instance.FetchConfigs(new userAttributes(), new appAttributes());
+            _isInitialized = true;
             OnInitialized?.Invoke();
         }
+
+        public static bool IsInitialized => _isInitialized;
 
 
         public static int GetInt(string key) {
@@ -40,6 +43,10 @@ namespace Root.Utils {
     
         public static bool GetBool(string key) {
             return RemoteConfigService.Instance.appConfig.GetBool(key);
+        }
+        
+        public static string GetString(string key) {
+            return RemoteConfigService.Instance.appConfig.GetString(key);
         }
     }
 }
