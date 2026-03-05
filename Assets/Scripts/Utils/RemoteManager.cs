@@ -18,9 +18,9 @@ namespace Root.Utils {
                 await AuthenticationService.Instance.SignInAnonymouslyAsync();
             }
         }
-    
-        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSplashScreen)]
+        
         public static async Task Initialize() {
+            Debug.Log("Initializing Remote Manager");
             if (Utilities.CheckForInternetConnection()) {
                 await InitializeRemoteConfigAsync();
             }
@@ -47,6 +47,12 @@ namespace Root.Utils {
         
         public static string GetString(string key) {
             return RemoteConfigService.Instance.appConfig.GetString(key);
+        }
+
+        [RuntimeInitializeOnLoadMethod(RuntimeInitializeLoadType.BeforeSceneLoad)]
+        private static void Reset() {
+            _isInitialized = false;
+            OnInitialized = null;
         }
     }
 }

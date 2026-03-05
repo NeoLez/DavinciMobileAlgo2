@@ -21,6 +21,7 @@ public static class MobileNotificationManager
 
     public static void Initialize()
     {
+        Debug.Log("Initializing Notifications");
         // Limpieza preventiva inicial.
         AndroidNotificationCenter.CancelAllDisplayedNotifications();
         AndroidNotificationCenter.CancelAllScheduledNotifications();
@@ -52,15 +53,17 @@ public static class MobileNotificationManager
         DisplayNotification(NotifChannelID, loginNotificationTitleString, loginNotificationDescriptionString, IconSelecter.myicon_0, IconSelecter.myicon_1, DateTime.Now.AddMinutes(1));
         
         Assert.IsTrue(RemoteManager.IsInitialized, "Remote Manager not initialized");
-        var enUs = new CultureInfo("en-US");
-        var updateDate = DateTime.ParseExact(RemoteManager.GetString("nextUpdateDate"), DateFormat, enUs);
+        var updateDate = DateTime.ParseExact(RemoteManager.GetString("nextUpdateDate"), DateFormat, CultureInfo.InvariantCulture, DateTimeStyles.AdjustToUniversal | DateTimeStyles.AssumeUniversal);
         var updateNotificationTitleString = localization.GetTranslate(UpdateInNotificationTitleID);
         var updateNotificationDescriptionString = localization.GetTranslate(UpdateInNotificationDescriptionID);
         DisplayNotification(StaminaChannelID, updateNotificationTitleString, updateNotificationDescriptionString, IconSelecter.myicon_0, IconSelecter.myicon_1, updateDate);
+        
+        Debug.Log("Initialized Notifications");
     }
 
     public static int DisplayNotification(string notifChannelID, string title, string text, IconSelecter iconSmall, IconSelecter iconLarge, DateTime fireTime)
     {
+        Debug.Log(notifChannelID + " " + title + " " + text);
         // Estas son realmente las notificaciones que ver� el usuario y que al hacer el request, quedan vinculadas a un channel creado previamente.
         AndroidNotification notification = new()
         {

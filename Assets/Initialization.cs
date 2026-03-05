@@ -16,13 +16,17 @@ namespace Root
         private void Awake()
         {
             localization.OnUpdate += () => {
+                Debug.Log("Localization Loaded");
                 localizationInitialized = true;
                 HandleInitialize();
             };
             RemoteManager.OnInitialized += () => {
+                Debug.Log("Initialized Remote Manager");
+                Debug.Log(RemoteManager.GetString("nextUpdateDate"));
                 remoteManager = true;
                 HandleInitialize();
             };
+            RemoteManager.Initialize();
             foreach (var obj in dontDestroy)
             {
                 DontDestroyOnLoad(obj);
@@ -31,10 +35,11 @@ namespace Root
 
         private void HandleInitialize() {
             if (!localizationInitialized || !remoteManager) return;
+            MobileNotificationManager.Initialize();
             
             SceneManager.LoadScene(baseSceneName, LoadSceneMode.Additive);
             SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
-            
+            Debug.Log("Finished Initialization");
             Destroy(gameObject);
         }
 
