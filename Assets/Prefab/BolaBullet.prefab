@@ -13,7 +13,7 @@ GameObject:
   - component: {fileID: 4305741217315774068}
   - component: {fileID: 4635387594457400618}
   m_Layer: 0
-  m_Name: ProjectilePrefab
+  m_Name: BolaBullet
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -47,7 +47,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f2b38ee2109b4290bcdd5c670b83a451, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  speed: 3
+  speed: 2
   visuals: {fileID: 6806783361050360433}
 --- !u!50 &4305741217315774068
 Rigidbody2D:
@@ -193,4 +193,4 @@ MeshFilter:
   m_PrefabInstance: {fileID: 0}
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 6806783361050360433}
-  m_Mesh: {fileID: -6034248578777377988, guid: cf37a125f36235325b03c5c488a2d7c0, type: 3}
+  m_Mesh: {fileID: -2383952699438097375, guid: 2502aa7db3e6bd063a3ce910ae17d374, type: 3}
