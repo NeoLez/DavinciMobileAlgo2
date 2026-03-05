@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1467976426437330232}
   - component: {fileID: 4159218885277849898}
   - component: {fileID: 4429560349743488412}
+  - component: {fileID: 371519019533617895}
   m_Layer: 8
   m_Name: TowerAL0
   m_TagString: Untagged
@@ -49,7 +50,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   action:
-    rid: 7099092017688084480
+    rid: 8825109252694081536
   TowerSO: {fileID: 11400000, guid: 0acaca0d2489b2098bc8d4c6e6be2ef9, type: 2}
   upgradeLevel: 0
   enemyLayer:
@@ -58,10 +59,10 @@ MonoBehaviour:
   references:
     version: 2
     RefIds:
-    - rid: 7099092017688084480
+    - rid: 8825109252694081536
       type: {class: TowerSummonProjectile, ns: Root.Gameplay, asm: Assembly-CSharp}
       data:
-        _projectile: {fileID: 1484568959335264809, guid: 1cffd7be40993da4db4d3608e07460ec, type: 3}
+        _projectile: {fileID: 4909718974888572379, guid: 478ad1dfec821d4408be7f0359460c24, type: 3}
 --- !u!58 &1467976426437330232
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -145,6 +146,20 @@ MonoBehaviour:
     value: 1
   - stat: {fileID: 11400000, guid: b8e91e3eabb33c34e888f35b63198bcd, type: 2}
     value: 1
+--- !u!114 &371519019533617895
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8682478097807941694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c963a31194fbd1448de9dbb684c5aaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inflateAmount: 1.2
+  animationDuration: 0.2
 --- !u!1001 &7335339423345667449
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -175,11 +190,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 808a9b4e553fcfdd9b36c130bd4edb6a, type: 3}
       propertyPath: m_LocalRotation.y
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 808a9b4e553fcfdd9b36c130bd4edb6a, type: 3}
       propertyPath: m_LocalRotation.z
-      value: 0
+      value: -0
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: 808a9b4e553fcfdd9b36c130bd4edb6a, type: 3}
       propertyPath: m_LocalEulerAnglesHint.x

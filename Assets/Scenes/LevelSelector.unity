@@ -974,7 +974,7 @@ PrefabInstance:
     m_Modifications:
     - target: {fileID: 2144010561493969133, guid: b7e36816c351cb249aa730e018df97a4, type: 3}
       propertyPath: m_Name
-      value: Nivel 1Text (TMP)
+      value: Nivel 2Text (TMP)
       objectReference: {fileID: 0}
     - target: {fileID: 3651318351598412898, guid: b7e36816c351cb249aa730e018df97a4, type: 3}
       propertyPath: m_text

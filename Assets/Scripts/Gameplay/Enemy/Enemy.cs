@@ -1,6 +1,6 @@
+using UnityEngine;
 using Root.FactoryAndPool;
 using Root.Gameplay.Stats;
-using UnityEngine;
 using UnityEngine.Assertions;
 
 namespace Root.Gameplay {
@@ -44,7 +44,11 @@ namespace Root.Gameplay {
         public int TakeDamage(int amount) {
             Assert.IsTrue(amount > 0);
             health -= amount;
-            if (health <= 0) {
+
+            //GetComponent<DamageFeedback>()?.PlayDamageEffect();
+
+            if (health <= 0)
+            {
                 Die();
                 return Mathf.Abs(health);
             }
@@ -66,6 +70,8 @@ namespace Root.Gameplay {
             
             
             EventManager.Trigger(new EventPayloads.EnemyDied());
+
+            //GetComponent<DeathAnimation>()?.PlayDeathAnimationAndDestroy();
             TurnOff();
         }
     }

@@ -14,6 +14,8 @@ GameObject:
   - component: {fileID: 6767370368326344975}
   - component: {fileID: 5586943485979926860}
   - component: {fileID: 5900137629561320413}
+  - component: {fileID: 1451931280200821593}
+  - component: {fileID: 2135092733235977406}
   m_Layer: 6
   m_Name: Enemy 1
   m_TagString: Untagged
@@ -161,6 +163,34 @@ MonoBehaviour:
     RefIds:
     - rid: 2049209859602907137
       type: {class: NormalEnemyMovementBehaviour, ns: Root.Gameplay, asm: Assembly-CSharp}
+--- !u!114 &1451931280200821593
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173999374576058408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: f62dbb946310dc246ad7c54f7676d0f0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  shrinkAmount: 1.5
+  effectDuration: 0.2
+--- !u!114 &2135092733235977406
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 173999374576058408}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 28cae436accbf4846a760b16c3dee8ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  animationDuration: 0.5
+  spinSpeed: {x: 0, y: 720, z: 0}
 --- !u!1001 &3529596532334859282
 PrefabInstance:
   m_ObjectHideFlags: 0

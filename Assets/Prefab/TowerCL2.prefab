@@ -13,6 +13,7 @@ GameObject:
   - component: {fileID: 1467976426437330232}
   - component: {fileID: 4159218885277849898}
   - component: {fileID: 4429560349743488412}
+  - component: {fileID: -7727974043313378688}
   m_Layer: 8
   m_Name: TowerCL2
   m_TagString: Untagged
@@ -146,6 +147,20 @@ MonoBehaviour:
     value: 3
   - stat: {fileID: 11400000, guid: 6525e5ca070f821b3837783cab0ea6e1, type: 2}
     value: 3
+--- !u!114 &-7727974043313378688
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8682478097807941694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c963a31194fbd1448de9dbb684c5aaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inflateAmount: 1.15
+  animationDuration: 0.3
 --- !u!1001 &1376399650468702257
 PrefabInstance:
   m_ObjectHideFlags: 0
