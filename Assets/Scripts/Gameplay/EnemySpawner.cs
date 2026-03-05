@@ -37,7 +37,7 @@ namespace Root.Gameplay {
             
             if (Time.time >= lastTimeSpawned + waves[waveIndex].time && enemiesSpawnedThisWave < waves[waveIndex].amount) {
                 var enemy = PoolManager.Instance.GetObject(waves[waveIndex].enemy);
-                enemy.transform.position = transform.position;
+                ((Enemy)enemy).Initialize(transform.position);
                 enemiesSpawnedThisWave++;
                 totalSpawnedEnemies++;
                 lastTimeSpawned = Time.time;

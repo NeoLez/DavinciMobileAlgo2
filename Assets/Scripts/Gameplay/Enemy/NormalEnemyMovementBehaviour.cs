@@ -12,6 +12,8 @@ namespace Root.Gameplay {
             base.Initialize(enemy);
             waypoints = Level.Ins.enemyPath;
             movementSpeed = enemy.GetStats().GetValue(Stat.MovementSpeed);
+            index = 0;
+            totalDistanceTravelled = 0;
         }
 
         private int index;

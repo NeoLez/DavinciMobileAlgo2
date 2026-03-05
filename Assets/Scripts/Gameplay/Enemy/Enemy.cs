@@ -13,12 +13,6 @@ namespace Root.Gameplay {
         [SerializeField] private Poolable MoneyImagePrefab;
         private bool isDead;
 
-        private void Start() {
-            stats = GetComponent<Stats.Stats>();
-            movementBehaviour.Initialize(this);
-            
-        }
-
         private void Update() {
             movementBehaviour.Update(Time.deltaTime);
         }
@@ -32,8 +26,11 @@ namespace Root.Gameplay {
         }
 
         public void Initialize(Vector3 position) {
+            isDead = false;
             transform.position = position;
+            stats = GetComponent<Stats.Stats>();
             health = (int)stats.GetValue(Stat.MaxHealth).value;
+            movementBehaviour.Initialize(this);
         }
 
         /// <summary>

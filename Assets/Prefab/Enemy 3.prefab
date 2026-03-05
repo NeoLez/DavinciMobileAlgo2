@@ -141,6 +141,8 @@ MonoBehaviour:
     value: 1
   - stat: {fileID: 11400000, guid: b85feaa4e77a08ffc95d709936162e61, type: 2}
     value: 3
+  - stat: {fileID: 11400000, guid: 052da72eeb90a2621b7d97bc5627ed09, type: 2}
+    value: 1
 --- !u!114 &5900137629561320413
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -157,7 +159,7 @@ MonoBehaviour:
     rid: 2049209859602907137
   health: 10
   cashReward: 15
-  MoneyImagePrefab: {fileID: 5500153333339433495, guid: 3680ec74e8ed33446bc8015243c12c17, type: 3}
+  MoneyImagePrefab: {fileID: 7331012874382467310, guid: 3680ec74e8ed33446bc8015243c12c17, type: 3}
   references:
     version: 2
     RefIds:

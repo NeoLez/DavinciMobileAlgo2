@@ -43,6 +43,7 @@ namespace Root.Gameplay {
             float dist = Vector2.Distance(transform.position, other.transform.position);
             if (dist < targetDistance) {
                 targetedEnemy = other.GetComponent<Enemy>();
+                targetedEnemy.OnTurnedOff += EnemyDied;
                 targetDistance = dist;
             }
         }
@@ -51,10 +52,15 @@ namespace Root.Gameplay {
             if (targetedEnemy == null || other.gameObject == null) return;
             
             if (targetedEnemy.gameObject == other.gameObject) {
+                targetedEnemy.OnTurnedOff -= EnemyDied;
                 targetedEnemy = null;
                 targetDistance = float.MaxValue;
-                //TODO could cause a bug since it doesn't recalculate closest enemy when it removes the previous one if the action gets invoked in the same frame
             }
+        }
+
+        private void EnemyDied() {
+            targetedEnemy = null;
+            targetDistance = float.MaxValue;
         }
     }
 }

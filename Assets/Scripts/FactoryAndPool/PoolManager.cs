@@ -16,7 +16,6 @@ namespace Root.FactoryAndPool {
                 pool = new();
                 _pools[prefab] = pool;
             }
-
             if (!pool.TryDequeue(out Poolable obj)) {
                 obj = Instantiate(prefab);
                 obj.SetPrefab(prefab);
