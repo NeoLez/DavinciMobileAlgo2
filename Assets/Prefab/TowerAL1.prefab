@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 4155994524262531898}
   - component: {fileID: 8238018078599693179}
   - component: {fileID: 8444334351411765155}
+  - component: {fileID: -776345476793670991}
+  - component: {fileID: -7010302029189028421}
   m_Layer: 8
   m_Name: TowerAL1
   m_TagString: Untagged
@@ -145,6 +147,34 @@ MonoBehaviour:
     value: 2
   - stat: {fileID: 11400000, guid: b8e91e3eabb33c34e888f35b63198bcd, type: 2}
     value: 2
+--- !u!114 &-776345476793670991
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88984754664781621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c963a31194fbd1448de9dbb684c5aaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inflateAmount: 1.2
+  animationDuration: 0.2
+--- !u!114 &-7010302029189028421
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 88984754664781621}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c963a31194fbd1448de9dbb684c5aaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inflateAmount: 1.2
+  animationDuration: 0.15
 --- !u!1001 &7251975943798820909
 PrefabInstance:
   m_ObjectHideFlags: 0

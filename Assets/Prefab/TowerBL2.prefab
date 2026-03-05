@@ -13,6 +13,8 @@ GameObject:
   - component: {fileID: 1467976426437330232}
   - component: {fileID: 4159218885277849898}
   - component: {fileID: 4429560349743488412}
+  - component: {fileID: -5436261494937915626}
+  - component: {fileID: -7656067189408594389}
   m_Layer: 8
   m_Name: TowerBL2
   m_TagString: Untagged
@@ -147,6 +149,34 @@ MonoBehaviour:
     value: 1
   - stat: {fileID: 11400000, guid: b8e91e3eabb33c34e888f35b63198bcd, type: 2}
     value: 1
+--- !u!114 &-5436261494937915626
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8682478097807941694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c963a31194fbd1448de9dbb684c5aaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inflateAmount: 1.2
+  animationDuration: 0.2
+--- !u!114 &-7656067189408594389
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8682478097807941694}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 4c963a31194fbd1448de9dbb684c5aaf, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  inflateAmount: 1.2
+  animationDuration: 0.15
 --- !u!1001 &2868736120012056545
 PrefabInstance:
   m_ObjectHideFlags: 0
