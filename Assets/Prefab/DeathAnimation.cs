@@ -1,11 +1,20 @@
 using System.Collections;
 using UnityEngine;
+using Root.FactoryAndPool; // Agrego esto para acceder a Poolable
 
 public class DeathAnimation : MonoBehaviour
 {
-    [Header("Configuración")]
+    [Header("Configuracion")]
     [SerializeField] private float animationDuration = 0.5f;
     [SerializeField] private Vector3 spinSpeed = new Vector3(0, 720, 0);
+
+    private Poolable _poolable;
+
+    private void Awake()
+    {
+        // reviso el componente poolable que tiene el enemigo
+        _poolable = GetComponent<Poolable>();
+    }
 
     public void PlayDeathAnimationAndDestroy()
     {
@@ -28,6 +37,19 @@ public class DeathAnimation : MonoBehaviour
             yield return null;
         }
 
-        Destroy(gameObject);
+        // Importante: Reseteo la escala antes de apagarlo 
+        // para que cuando vuelva a salir de la pool no este en cero
+        transform.localScale = startScale;
+
+        // Si tiene el componente poolable llamo a TurnOff
+        if (_poolable != null)
+        {
+            _poolable.TurnOff();
+        }
+        else
+        {
+            // Si por algun motivo no es poolable lo Destruyonormalmente
+            Destroy(gameObject);
+        }
     }
 }
