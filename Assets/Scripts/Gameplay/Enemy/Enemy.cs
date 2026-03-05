@@ -1,15 +1,16 @@
-using System;
+using Root.FactoryAndPool;
+using Root.Gameplay.Stats;
 using UnityEngine;
 using UnityEngine.Assertions;
 
 namespace Root.Gameplay {
     [RequireComponent(typeof(Stats.Stats))]
-    public class Enemy : MonoBehaviour {
+    public class Enemy : Poolable {
         [SerializeReference, SubclassSelector] private EnemyMovementBehaviour movementBehaviour;
         private Stats.Stats stats;
         [SerializeField] private int health;
         [SerializeField] private int cashReward;
-        [SerializeField] private GameObject MoneyImagePrefab;
+        [SerializeField] private Poolable MoneyImagePrefab;
         private bool isDead;
 
         private void Start() {
@@ -28,6 +29,11 @@ namespace Root.Gameplay {
 
         public Stats.Stats GetStats() {
             return stats;
+        }
+
+        public void Initialize(Vector3 position) {
+            transform.position = position;
+            health = (int)stats.GetValue(Stat.MaxHealth).value;
         }
 
         /// <summary>
@@ -53,13 +59,14 @@ namespace Root.Gameplay {
 
             if (cashReward > 0)
             {
-                Instantiate(MoneyImagePrefab, transform.position, Quaternion.identity);
+                var coins = PoolManager.Instance.GetObject(MoneyImagePrefab);
+                coins.transform.position = transform.position;
                 Level.Ins.gold.AddGold(cashReward);
             }
             
             
             EventManager.Trigger(new EventPayloads.EnemyDied());
-            Destroy(gameObject);
+            TurnOff();
         }
     }
 }

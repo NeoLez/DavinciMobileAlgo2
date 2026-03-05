@@ -6,5 +6,6 @@ namespace Root.Gameplay.Stats {
         AttackCooldown = 4,
         AttackPierceLevel = 5,
         GoldGenerated = 6,
+        MaxHealth = 7,
     }
 }

@@ -1,4 +1,3 @@
-using System;
 using System.Collections.Generic;
 using Root.Utils;
 using UnityEngine;
@@ -22,7 +21,6 @@ namespace Root
 
         private void HandleInitialize()
         {
-            //Instantiate(Systems);
             SceneManager.LoadScene(baseSceneName, LoadSceneMode.Additive);
             SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
             
@@ -31,7 +29,6 @@ namespace Root
 
         private void OnDestroy()
         {
-            Debug.Log("a");
             RemoteManager.OnInitialized -= HandleInitialize;
         }
     }

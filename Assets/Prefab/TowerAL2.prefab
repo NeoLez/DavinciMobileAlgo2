@@ -61,7 +61,7 @@ MonoBehaviour:
     - rid: 7099092017688084480
       type: {class: TowerSummonProjectile, ns: Root.Gameplay, asm: Assembly-CSharp}
       data:
-        _projectile: {fileID: 4909718974888572379, guid: 1cffd7be40993da4db4d3608e07460ec, type: 3}
+        _projectile: {fileID: 1484568959335264809, guid: 1cffd7be40993da4db4d3608e07460ec, type: 3}
 --- !u!58 &2480473189887464405
 CircleCollider2D:
   m_ObjectHideFlags: 0

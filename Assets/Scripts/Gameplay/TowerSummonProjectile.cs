@@ -1,17 +1,17 @@
 ﻿using System;
+using Root.FactoryAndPool;
 using UnityEngine;
-using Object = UnityEngine.Object;
 
 namespace Root.Gameplay {
     [Serializable]
     public class TowerSummonProjectile : TowerAction {
-        [SerializeField] private GameObject _projectile;
+        [SerializeField] private Poolable _projectile;
         public override void Activate() {
             Enemy enemy = tower.GetTargetedEnemy();
             if (enemy != null) {
-                GameObject obj = Object.Instantiate(_projectile);
+                Poolable obj = PoolManager.Instance.GetObject(_projectile);
                 obj.transform.position = tower.transform.position + Vector3.back;
-                IProjectile projectile = obj.GetComponent<IProjectile>();
+                Projectile projectile = obj.GetComponent<Projectile>();
                 projectile.Initialize(tower, enemy);
                 CompletedAction();
             }

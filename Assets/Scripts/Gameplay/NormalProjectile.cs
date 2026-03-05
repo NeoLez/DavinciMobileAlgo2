@@ -2,41 +2,42 @@
 using UnityEngine;
 
 namespace Root.Gameplay {
-    public class NormalProjectile : MonoBehaviour, IProjectile {
-        private Vector2 direction;
-        private float lifetime = 1;
+    public class NormalProjectile : Projectile {
+        private Vector2 _direction;
+        private float _lifetime = 1;
         [SerializeField] private float speed;
         [SerializeField] private GameObject visuals;
-        private Tower tower;
-        private float creationTime;
-        private int pierce;
-        private int damage;
-        public void Initialize(Tower tower, Enemy enemy) {
-            direction = (enemy.transform.position - tower.transform.position).normalized;
-            creationTime = Time.time;
-            visuals.transform.rotation = Quaternion.LookRotation(direction);
-            this.tower = tower;
+        private Tower _tower;
+        private float _creationTime;
+        private int _pierce;
+        private int _damage;
+        
+        public override void Initialize(Tower tower, Enemy enemy) {
+            _direction = (enemy.transform.position - tower.transform.position).normalized;
+            _creationTime = Time.time;
+            visuals.transform.rotation = Quaternion.LookRotation(_direction);
+            _tower = tower;
             Stats.Stats stats = tower.GetStats();
-            pierce = (int)stats.GetValue(Stat.AttackPierceLevel).value;
-            damage = (int)stats.GetValue(Stat.AttackDamage).value;
-            lifetime = stats.GetValue(Stat.TowerRange).value / speed;
+            _pierce = (int)stats.GetValue(Stat.AttackPierceLevel).value;
+            _damage = (int)stats.GetValue(Stat.AttackDamage).value;
+            _lifetime = stats.GetValue(Stat.TowerRange).value / speed;
         }
 
         private void Update() {
-            if (Time.time > creationTime + lifetime) {
-                Destroy(gameObject);
+            if (Time.time > _creationTime + _lifetime) {
+                TurnOff();
                 return;
             }
-            transform.position += (Vector3) direction * (speed * Time.deltaTime);
+            transform.position += (Vector3) _direction * (speed * Time.deltaTime);
         }
 
         private void OnTriggerEnter2D(Collider2D other) {
             if(other.gameObject.layer != LayerMask.NameToLayer("Enemy")) return;
             Enemy enemy = other.GetComponent<Enemy>();
-            enemy.TakeDamage(damage);
-            pierce--;
+            enemy.TakeDamage(_damage);
+            _pierce--;
             
-            if(pierce == 0) Destroy(gameObject);
+            if(_pierce == 0) TurnOff();
         }
     }
 }

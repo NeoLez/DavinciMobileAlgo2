@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using Root.FactoryAndPool;
 using Root.Gameplay.Stats;
 using UnityEngine;
 
@@ -35,7 +36,7 @@ namespace Root.Gameplay {
             }
             
             if (Time.time >= lastTimeSpawned + waves[waveIndex].time && enemiesSpawnedThisWave < waves[waveIndex].amount) {
-                GameObject enemy = Instantiate(waves[waveIndex].enemy);
+                var enemy = PoolManager.Instance.GetObject(waves[waveIndex].enemy);
                 enemy.transform.position = transform.position;
                 enemiesSpawnedThisWave++;
                 totalSpawnedEnemies++;
