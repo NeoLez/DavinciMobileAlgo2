@@ -13,7 +13,7 @@ namespace Root.Gameplay {
                 obj.transform.position = tower.transform.position + Vector3.back;
                 Projectile projectile = obj.GetComponent<Projectile>();
                 projectile.Initialize(tower, enemy);
-                //tower.GetComponentInChildren<TowerSquashFeedback>()?.PlayShootEffect();
+                tower.GetComponentInChildren<TowerSquashFeedback>()?.PlayShootEffect();
                 CompletedAction();
             }
         }

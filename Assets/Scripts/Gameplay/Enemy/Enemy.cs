@@ -1,11 +1,13 @@
-using UnityEngine;
 using Root.FactoryAndPool;
 using Root.Gameplay.Stats;
+using UnityEngine;
 using UnityEngine.Assertions;
 
-namespace Root.Gameplay {
+namespace Root.Gameplay
+{
     [RequireComponent(typeof(Stats.Stats))]
-    public class Enemy : Poolable {
+    public class Enemy : Poolable
+    {
         [SerializeReference, SubclassSelector] private EnemyMovementBehaviour movementBehaviour;
         private Stats.Stats stats;
         [SerializeField] private int health;
@@ -13,21 +15,30 @@ namespace Root.Gameplay {
         [SerializeField] private Poolable MoneyImagePrefab;
         private bool isDead;
 
-        private void Update() {
+        private void Update()
+        {
             movementBehaviour.Update(Time.deltaTime);
         }
 
-        public float GetPathPercentageCompletion() {
+        public float GetPathPercentageCompletion()
+        {
             return movementBehaviour.GetPathPercentageCompletion();
         }
 
-        public Stats.Stats GetStats() {
+        public Stats.Stats GetStats()
+        {
             return stats;
         }
 
-        public void Initialize(Vector3 position) {
+        public void Initialize(Vector3 position)
+        {
             isDead = false;
             transform.position = position;
+
+            // Me aseguro de que vuelva a su tamaño original al salir de la pool
+            // porque la animacion de muerte lo deja en escala cero
+            transform.localScale = Vector3.one;
+
             stats = GetComponent<Stats.Stats>();
             health = (int)stats.GetValue(Stat.MaxHealth).value;
             movementBehaviour.Initialize(this);
@@ -38,11 +49,13 @@ namespace Root.Gameplay {
         /// </summary>
         /// <param name="amount"></param>
         /// <returns></returns>
-        public int TakeDamage(int amount) {
+        public int TakeDamage(int amount)
+        {
             Assert.IsTrue(amount > 0);
             health -= amount;
 
-            //GetComponent<DamageFeedback>()?.PlayDamageEffect();
+            // Descomento el feedback de daño para que se vea
+            GetComponent<DamageFeedback>()?.PlayDamageEffect();
 
             if (health <= 0)
             {
@@ -53,9 +66,10 @@ namespace Root.Gameplay {
             return 0;
         }
 
-        public void Die() {
-            
-            if(isDead) return;
+        public void Die()
+        {
+
+            if (isDead) return;
             isDead = true;
 
             if (cashReward > 0)
@@ -64,12 +78,13 @@ namespace Root.Gameplay {
                 coins.transform.position = transform.position;
                 Level.Ins.gold.AddGold(cashReward);
             }
-            
-            
+
+
             EventManager.Trigger(new EventPayloads.EnemyDied());
 
-            //GetComponent<DeathAnimation>()?.PlayDeathAnimationAndDestroy();
-            TurnOff();
+            // Llamo a la animacion y dejo que ella se encargue de hacer el TurnOff() al terminar
+            GetComponent<DeathAnimation>()?.PlayDeathAnimationAndDestroy();
+
         }
     }
 }

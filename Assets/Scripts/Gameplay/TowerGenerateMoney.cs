@@ -13,7 +13,7 @@ namespace Root.Gameplay {
             Level.Ins.gold.AddGold((int)towerStats.GetValue(Stat.GoldGenerated).value * a.Length);
             var obj = PoolManager.Instance.GetObject(MoneyImagePrefab);
             obj.transform.position = tower.transform.position;
-            //tower.GetComponentInChildren<TowerSquashFeedback>()?.PlayShootEffect();
+            tower.GetComponentInChildren<TowerSquashFeedback>()?.PlayShootEffect();
             CompletedAction();
         }
     }
