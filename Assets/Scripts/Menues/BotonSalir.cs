@@ -1,12 +1,22 @@
 using UnityEngine;
 
-// Script para cerrar el juego con un botón
 public class BotonSalir : MonoBehaviour
 {
-    // Método que se llama al hacer click en el botón
+    [SerializeField] private ConfirmationPopup confirmationPopup;
+
+    // Creo esta variable para poder escribir la ID de traduccion desde Unity
+    // por ejemplo: "ask_quit_game"
+    [SerializeField] private string translationKey;
+
     public void OnClickQuit()
     {
-        Debug.Log("Saliendo del juego...");
-        Application.Quit(); // Cierra el juego
+        // Le mando la clave de traduccion y la accion real a ejecutar
+        confirmationPopup.ShowPopup(translationKey, RealQuit);
+    }
+
+    private void RealQuit()
+    {
+        Debug.Log("Quitting game...");
+        Application.Quit();
     }
 }
