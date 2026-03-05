@@ -1,13 +1,31 @@
-using System;
 using UnityEngine;
 using UnityEngine.Advertisements;
 
 namespace Root
 {
-    public class EnergyAdButton : MonoBehaviour {
+    public class EnergyAdButton : MonoBehaviour
+    {
         [SerializeField] private int completeStaminaReward;
         [SerializeField] private int partialStaminaReward;
-        public void LoadStaminaAdd() {
+
+        [SerializeField] private ConfirmationPopup confirmationPopup;
+        [SerializeField] private string translationKey;
+        [SerializeField] private bool requireConfirmation = true;
+
+        public void LoadStaminaAdd()
+        {
+            if (requireConfirmation && confirmationPopup != null)
+            {
+                confirmationPopup.ShowPopup(translationKey, RealLoadStaminaAdd);
+            }
+            else
+            {
+                RealLoadStaminaAdd();
+            }
+        }
+
+        private void RealLoadStaminaAdd()
+        {
             AdsManager.Instance.SubscribeToRewardedAdResult(OnAdCompleted);
             AdsManager.Instance.ShowRewardedAd();
         }
@@ -15,16 +33,17 @@ namespace Root
         private void OnAdCompleted(UnityAdsShowCompletionState completionState)
         {
             StaminaSystem stamina = Database.Database.Ins.staminaSystem;
-            switch (completionState) {
+            switch (completionState)
+            {
                 case UnityAdsShowCompletionState.COMPLETED:
                     stamina.AddStamina(completeStaminaReward);
-                    return;
+                    break; // Cambie return por break para que llegue al unsubscribe
                 case UnityAdsShowCompletionState.SKIPPED:
                     stamina.AddStamina(partialStaminaReward);
-                    return;
+                    break;
                 case UnityAdsShowCompletionState.UNKNOWN:
                     Debug.LogWarning("Add couldn't be processed");
-                    return;
+                    break;
             }
             AdsManager.Instance.UnsubscribeToRewardedAdResult(OnAdCompleted);
         }

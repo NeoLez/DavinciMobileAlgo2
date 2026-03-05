@@ -3,18 +3,32 @@ using UnityEngine.SceneManagement;
 
 public class BotonCambiarEscena : MonoBehaviour
 {
-    [SerializeField] private string sceneName; // El nombre de mi escena
-    [SerializeField] private ConfirmationPopup confirmationPopup; // Referencia a mi popup
-    [SerializeField] private string translationKey; // Ej: "ask_return_menu"
+    [SerializeField] private string sceneName;
+    [SerializeField] private ConfirmationPopup confirmationPopup;
+    [SerializeField] private string translationKey;
 
-    // Este es el metodo que llamo desde el evento OnClick() del boton en el Inspector
+    // Aca me creo la variable para el tilde. 
+    // La pongo en true por defecto para que de base me pida confirmacion.
+    [SerializeField] private bool requireConfirmation = true;
+
     public void ChangeSceneOnClick()
     {
-        // En vez de cargar la escena de una, le paso el texto y mi funcion real
-        confirmationPopup.ShowPopup(translationKey, RealChangeScene);
+        // Me fijo si el tilde esta activado en el Inspector
+        if (requireConfirmation)
+        {
+            // Si tiene el tilde, llamo al popup como veniamos haciendo
+            if (confirmationPopup != null)
+            {
+                confirmationPopup.ShowPopup(translationKey, RealChangeScene);
+            }
+        }
+        else
+        {
+            // Si le saque el tilde, cambio de escena al instante sin preguntar nada
+            RealChangeScene();
+        }
     }
 
-    // Aca guardo la logica real, esta funcion solo se ejecuta si le doy a Yes en el popup
     private void RealChangeScene()
     {
         SceneManager.LoadScene(sceneName);
