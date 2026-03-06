@@ -17,14 +17,11 @@ namespace Root.Database
 
         public void Initialize()
         {
-            // Limpio el diccionario para evitar duplicados si reinicio el juego
+            // Limpio el diccionario por si las dudas y lo vuelvo a llenar
             towerDictionary.Clear();
             foreach (var tower in TowerList)
             {
-                if (tower != null)
-                {
-                    towerDictionary[tower.id] = tower;
-                }
+                if (tower != null) towerDictionary[tower.id] = tower;
             }
 
             LoadGame();
@@ -33,6 +30,7 @@ namespace Root.Database
 
         public void LoadGame()
         {
+            // Cargo el string de IDs guardado en el disco
             string towersString = PlayerPrefs.GetString(UNLOCKED_TOWERS_KEY, "");
             if (!string.IsNullOrEmpty(towersString))
             {
@@ -42,10 +40,12 @@ namespace Root.Database
 
         public void ResetData()
         {
-            // Borro el registro y limpio la lista en memoria
+            // Borro el registro de torres desbloqueadas y limpio la memoria
             PlayerPrefs.DeleteKey(UNLOCKED_TOWERS_KEY);
             unlockedTowers.Clear();
-            AddDefaultTowers(); // Vuelvo a dar las torres iniciales
+
+            // Vuelvo a dar las torres que vienen por defecto (las basicas)
+            AddDefaultTowers();
             SaveGame();
         }
 
@@ -60,7 +60,7 @@ namespace Root.Database
 
         public void SaveGame()
         {
-            // Armo el string con las IDs de las torres desbloqueadas
+            // Armo el string con las IDs separadas por coma para guardar
             StringBuilder stringBuilder = new();
             foreach (var id in unlockedTowers)
             {
@@ -68,6 +68,7 @@ namespace Root.Database
                 stringBuilder.Append(",");
             }
 
+            // Saco la ultima coma si es que hay algo en el builder
             if (stringBuilder.Length > 0) stringBuilder.Length -= 1;
 
             PlayerPrefs.SetString(UNLOCKED_TOWERS_KEY, stringBuilder.ToString());
@@ -85,10 +86,9 @@ namespace Root.Database
 
         public bool IsTowerUnlocked(TowerSO towerSO) => unlockedTowers.Contains(towerSO.id);
 
-        // ESTA ES LA FUNCION QUE TE PIDE EL ERROR
+        // Uso esto para que el creador de botones sepa que mostrar
         public List<TowerSO> GetUnlockedTowers()
         {
-            // Filtro mi diccionario para devolver solo las torres cuyas IDs estan en el HashSet
             return unlockedTowers
                 .Where(id => towerDictionary.ContainsKey(id))
                 .Select(id => towerDictionary[id])

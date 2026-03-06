@@ -2119,7 +2119,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 1925336620428632510, guid: d7ed1efa968508a4daacc46e382c1aeb, type: 3}
       propertyPath: m_AnchorMin.x
-      value: 0.000000059604645
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 2040199375710521334, guid: d7ed1efa968508a4daacc46e382c1aeb, type: 3}
       propertyPath: m_TargetGraphic
@@ -2571,7 +2571,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7538743396151887967, guid: d7ed1efa968508a4daacc46e382c1aeb, type: 3}
       propertyPath: m_MatchWidthOrHeight
-      value: 1
+      value: 0.5
       objectReference: {fileID: 0}
     - target: {fileID: 7540814195174980859, guid: d7ed1efa968508a4daacc46e382c1aeb, type: 3}
       propertyPath: m_IsActive
