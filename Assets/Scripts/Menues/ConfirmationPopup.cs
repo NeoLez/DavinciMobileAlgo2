@@ -17,9 +17,7 @@ public class ConfirmationPopup : MonoBehaviour
 
     private void Start()
     {
-        // Me aseguro de que arranque apagado
-        //popupPanel.SetActive(false);
-
+      
         // Asigno mis funciones a los botones por codigo
         yesButton.onClick.AddListener(OnYesClicked);
         noButton.onClick.AddListener(OnNoClicked);
@@ -29,6 +27,9 @@ public class ConfirmationPopup : MonoBehaviour
         {
             Localization.Ins.OnUpdate += UpdatePopupText;
         }
+
+        // Obligo al popup a traducirse apenas se activa por primera vez
+        UpdatePopupText();
     }
 
     private void OnDestroy()
@@ -42,10 +43,15 @@ public class ConfirmationPopup : MonoBehaviour
 
     public void ShowPopup(string localizationKey, UnityAction action)
     {
-        currentTranslationKey = localizationKey; // Me guardo la key
-        UpdatePopupText(); // Pido el texto traducido
+        // 1. PRIMERO prendo el panel para que TextMeshPro despierte
+        popupPanel.SetActive(true);
+
+        // 2. DESPUES le paso la key y actualizo el texto
+        currentTranslationKey = localizationKey;
+        UpdatePopupText();
+
+        // 3. Guardo la accion
         actionToConfirm = action;
-        popupPanel.SetActive(true); // Prendo el panel
     }
 
     private void UpdatePopupText()
