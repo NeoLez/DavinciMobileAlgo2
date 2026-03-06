@@ -3,9 +3,11 @@ using System.Linq;
 using System.Text;
 using UnityEngine;
 
-namespace Root.Database {
+namespace Root.Database
+{
     [CreateAssetMenu(menuName = "SO/Database")]
-    public class TowerDatabaseSO : ScriptableObject {
+    public class TowerDatabaseSO : ScriptableObject
+    {
         [SerializeField] private List<TowerSO> TowerList;
         [SerializeField] private List<TowerSO> DefaultUnlockedTowers;
 
@@ -13,68 +15,84 @@ namespace Root.Database {
         private const string UNLOCKED_TOWERS_KEY = "UnlockedTowers";
         private HashSet<int> unlockedTowers = new();
 
-        public void Initialize() {
-            foreach (var tower in TowerList) {
-                towerDictionary[tower.id] = tower;
+        public void Initialize()
+        {
+            // Limpio el diccionario para evitar duplicados si reinicio el juego
+            towerDictionary.Clear();
+            foreach (var tower in TowerList)
+            {
+                if (tower != null)
+                {
+                    towerDictionary[tower.id] = tower;
+                }
             }
 
             LoadGame();
             AddDefaultTowers();
         }
 
-        public void LoadGame() {
-            string towersString = PlayerPrefs.GetString(UNLOCKED_TOWERS_KEY);
-            if (towersString.Length > 0) {
+        public void LoadGame()
+        {
+            string towersString = PlayerPrefs.GetString(UNLOCKED_TOWERS_KEY, "");
+            if (!string.IsNullOrEmpty(towersString))
+            {
                 unlockedTowers = towersString.Split(',').Select(int.Parse).ToHashSet();
             }
         }
 
-        private void AddDefaultTowers() {
-            if(DefaultUnlockedTowers == null) return;
-            foreach (var unlockedTower in DefaultUnlockedTowers) {
+        public void ResetData()
+        {
+            // Borro el registro y limpio la lista en memoria
+            PlayerPrefs.DeleteKey(UNLOCKED_TOWERS_KEY);
+            unlockedTowers.Clear();
+            AddDefaultTowers(); // Vuelvo a dar las torres iniciales
+            SaveGame();
+        }
+
+        private void AddDefaultTowers()
+        {
+            if (DefaultUnlockedTowers == null) return;
+            foreach (var unlockedTower in DefaultUnlockedTowers)
+            {
                 unlockedTowers.Add(unlockedTower.id);
             }
         }
 
-        public void UnlockTower(TowerSO towerSO) {
-            unlockedTowers.Add(towerSO.id);
-        }
-
-        public bool IsTowerUnlocked(TowerSO towerSO) {
-            return unlockedTowers.Contains(towerSO.id);
-        }
-
-        public List<TowerSO> GetUnlockedTowers()
+        public void SaveGame()
         {
-            return unlockedTowers.Select(id => towerDictionary[id]).ToList();
-        }
-
-        public void SaveGame() {
-            if (unlockedTowers.Count >= 0) return;
-            
+            // Armo el string con las IDs de las torres desbloqueadas
             StringBuilder stringBuilder = new();
-            foreach (var id in unlockedTowers) {
+            foreach (var id in unlockedTowers)
+            {
                 stringBuilder.Append(id);
                 stringBuilder.Append(",");
             }
-            
-            stringBuilder.Length -= 1;
+
+            if (stringBuilder.Length > 0) stringBuilder.Length -= 1;
+
             PlayerPrefs.SetString(UNLOCKED_TOWERS_KEY, stringBuilder.ToString());
+            PlayerPrefs.Save();
         }
 
-
-        public TowerSO GetSO(int id) {
-            return towerDictionary[id];
-        }
-
-        public void Print() {
-            foreach (var VARIABLE in unlockedTowers) {
-                Debug.Log(towerDictionary[VARIABLE].name);
+        public void UnlockTower(TowerSO towerSO)
+        {
+            if (!unlockedTowers.Contains(towerSO.id))
+            {
+                unlockedTowers.Add(towerSO.id);
+                SaveGame();
             }
         }
 
-        public void ResetData() {
-            PlayerPrefs.SetString(UNLOCKED_TOWERS_KEY, "");
+        public bool IsTowerUnlocked(TowerSO towerSO) => unlockedTowers.Contains(towerSO.id);
+
+        // ESTA ES LA FUNCION QUE TE PIDE EL ERROR
+        public List<TowerSO> GetUnlockedTowers()
+        {
+            // Filtro mi diccionario para devolver solo las torres cuyas IDs estan en el HashSet
+            return unlockedTowers
+                .Where(id => towerDictionary.ContainsKey(id))
+                .Select(id => towerDictionary[id])
+                .ToList();
         }
     }
 }
