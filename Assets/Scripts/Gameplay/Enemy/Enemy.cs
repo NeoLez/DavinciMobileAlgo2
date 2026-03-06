@@ -29,10 +29,9 @@ namespace Root.Gameplay
             return stats;
         }
 
-        public void Initialize(Vector3 position)
+        public void InitializeEnemy()
         {
             isDead = false;
-            transform.position = position;
 
             // Me aseguro de que vuelva a su tama�o original al salir de la pool
             // porque la animacion de muerte lo deja en escala cero

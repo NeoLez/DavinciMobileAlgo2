@@ -13,12 +13,10 @@ namespace Root.FactoryAndPool {
         
         public Poolable GetObject(Poolable prefab) {
             if (!_pools.TryGetValue(prefab, out var pool)) {
-                Debug.Log("aaaa");
                 pool = new();
                 _pools[prefab] = pool;
             }
             if (!pool.TryDequeue(out Poolable obj)) {
-                Debug.Log("bbbb");
                 obj = Instantiate(prefab);
                 obj.SetPrefab(prefab);
                 obj.Initialize();
