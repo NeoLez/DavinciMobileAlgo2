@@ -12,9 +12,12 @@ namespace Root {
                 Destroy(this);
             }
             Instance = this;
+            DontDestroyOnLoad(this);
+            canvas.SetActive(false);
         }
 
         public void LoadScene(string scene) {
+            gameObject.SetActive(true);
             canvas.SetActive(true);
             var op = SceneManager.LoadSceneAsync(scene);
             op.completed += operation => {

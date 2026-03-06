@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 0}
-  m_IndirectSpecularColor: {r: 0.12731749, g: 0.13414757, b: 0.12107873, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -299,6 +299,10 @@ PrefabInstance:
     - target: {fileID: 101417790732424519, guid: 22fff32e62db1bd498880498014644cb, type: 3}
       propertyPath: m_Name
       value: CanvasCargaSincrona
+      objectReference: {fileID: 0}
+    - target: {fileID: 101417790732424519, guid: 22fff32e62db1bd498880498014644cb, type: 3}
+      propertyPath: m_IsActive
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 3300006522660077490, guid: 22fff32e62db1bd498880498014644cb, type: 3}
       propertyPath: m_Pivot.x
