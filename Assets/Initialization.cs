@@ -37,6 +37,7 @@ namespace Root
             if (!localizationInitialized || !remoteManager) return;
             MobileNotificationManager.Initialize();
             EnemySO.InitializeValues();
+            TowerSO.InitializeValues();
             
             SceneManager.LoadScene(baseSceneName, LoadSceneMode.Additive);
             SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);

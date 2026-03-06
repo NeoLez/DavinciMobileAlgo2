@@ -19,7 +19,6 @@ namespace Root {
 
         
         public static void InitializeValues() {
-            Debug.Log("IIIIII");
             var enemySos = Resources.LoadAll<EnemySO>("Enemy");
             foreach (var enemySo in enemySos) {
                 enemySo.UpdateValuesRemote();
@@ -28,8 +27,6 @@ namespace Root {
 
         public void UpdateValuesRemote() {
             _cashReward = RemoteManager.GetInt("ID_" + name + "CashReward");
-            Debug.Log("ID_" + name + "CashReward");
-            Debug.Log(_cashReward);
         }
     }
 }
