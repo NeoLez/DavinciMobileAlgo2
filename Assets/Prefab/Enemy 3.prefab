@@ -157,9 +157,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   movementBehaviour:
     rid: 2049209859602907137
-  health: 10
-  cashReward: 15
-  MoneyImagePrefab: {fileID: 7331012874382467310, guid: 3680ec74e8ed33446bc8015243c12c17, type: 3}
+  settings: {fileID: 11400000, guid: 72b5d191eeb2d190a986a9c0b8b36514, type: 2}
   references:
     version: 2
     RefIds:

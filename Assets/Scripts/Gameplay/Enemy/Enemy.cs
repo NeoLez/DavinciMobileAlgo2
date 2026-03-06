@@ -10,9 +10,8 @@ namespace Root.Gameplay
     {
         [SerializeReference, SubclassSelector] private EnemyMovementBehaviour movementBehaviour;
         private Stats.Stats stats;
-        [SerializeField] private int health;
-        [SerializeField] private int cashReward;
-        [SerializeField] private Poolable MoneyImagePrefab;
+        private int health;
+        [SerializeField] private EnemySO settings;
         private bool isDead;
 
         private void Update()
@@ -35,7 +34,7 @@ namespace Root.Gameplay
             isDead = false;
             transform.position = position;
 
-            // Me aseguro de que vuelva a su tamaño original al salir de la pool
+            // Me aseguro de que vuelva a su tamaï¿½o original al salir de la pool
             // porque la animacion de muerte lo deja en escala cero
             transform.localScale = Vector3.one;
 
@@ -54,7 +53,7 @@ namespace Root.Gameplay
             Assert.IsTrue(amount > 0);
             health -= amount;
 
-            // Descomento el feedback de daño para que se vea
+            // Descomento el feedback de daï¿½o para que se vea
             GetComponent<DamageFeedback>()?.PlayDamageEffect();
 
             if (health <= 0)
@@ -72,11 +71,11 @@ namespace Root.Gameplay
             if (isDead) return;
             isDead = true;
 
-            if (cashReward > 0)
+            if (settings.CashReward > 0)
             {
-                var coins = PoolManager.Instance.GetObject(MoneyImagePrefab);
+                var coins = PoolManager.Instance.GetObject(settings.MoneyImagePrefab);
                 coins.transform.position = transform.position;
-                Level.Ins.gold.AddGold(cashReward);
+                Level.Ins.gold.AddGold(settings.CashReward);
             }
 
 

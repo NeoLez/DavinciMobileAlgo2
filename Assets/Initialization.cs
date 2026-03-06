@@ -36,6 +36,7 @@ namespace Root
         private void HandleInitialize() {
             if (!localizationInitialized || !remoteManager) return;
             MobileNotificationManager.Initialize();
+            EnemySO.InitializeValues();
             
             SceneManager.LoadScene(baseSceneName, LoadSceneMode.Additive);
             SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
