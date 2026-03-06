@@ -59345,14 +59345,7 @@ MonoBehaviour:
   playerHealth: 10
   enemyPath:
   - {fileID: 2141121962}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
-  - {fileID: 0}
+  - {fileID: 1308643712}
   grid: {fileID: 260813334}
   gold: {fileID: 396153384}
 --- !u!4 &1220103336
@@ -102936,10 +102929,10 @@ SceneRoots:
   - {fileID: 963194228}
   - {fileID: 705507995}
   - {fileID: 1220103336}
+  - {fileID: 1693874939}
   - {fileID: 260813335}
   - {fileID: 1618005994}
   - {fileID: 396153385}
-  - {fileID: 1693874939}
   - {fileID: 1017722824}
   - {fileID: 1499194797}
   - {fileID: 1007785895}
