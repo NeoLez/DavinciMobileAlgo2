@@ -1,14 +1,36 @@
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
-// Script para cambiar de escena con un botón
 public class BotonCambiarEscena : MonoBehaviour
 {
-    [SerializeField] private string nombreEscena; // Nombre de la escena a cargar
+    [SerializeField] private string sceneName;
+    [SerializeField] private ConfirmationPopup confirmationPopup;
+    [SerializeField] private string translationKey;
 
- 
-    public void CambiarEscenaOnClick() // Método para cambiar de escena al hacer clic en el botón
+    // Aca me creo la variable para el tilde. 
+    // La pongo en true por defecto para que de base me pida confirmacion.
+    [SerializeField] private bool requireConfirmation = true;
+
+    public void ChangeSceneOnClick()
     {
-        SceneManager.LoadScene(nombreEscena);
+        // Me fijo si el tilde esta activado en el Inspector
+        if (requireConfirmation)
+        {
+            // Si tiene el tilde, llamo al popup como veniamos haciendo
+            if (confirmationPopup != null)
+            {
+                confirmationPopup.ShowPopup(translationKey, RealChangeScene);
+            }
+        }
+        else
+        {
+            // Si le saque el tilde, cambio de escena al instante sin preguntar nada
+            RealChangeScene();
+        }
+    }
+
+    private void RealChangeScene()
+    {
+        SceneManager.LoadScene(sceneName);
     }
 }
