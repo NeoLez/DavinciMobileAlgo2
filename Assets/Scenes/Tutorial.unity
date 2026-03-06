@@ -32193,7 +32193,7 @@ MonoBehaviour:
   m_enableAutoSizing: 1
   m_fontSizeMin: 5
   m_fontSizeMax: 15
-  m_fontStyle: 32
+  m_fontStyle: 0
   m_HorizontalAlignment: 2
   m_VerticalAlignment: 512
   m_textAlignment: 65535
@@ -64479,6 +64479,11 @@ MonoBehaviour:
   tutorialText: {fileID: 665571026}
   tutorialPanel: {fileID: 309535973}
   spawner: {fileID: 718154494}
+  tiempoEsperaAlFinal: 3
+  idStepConstruir: ID_Tutorial_Build
+  idStepMejorar: ID_Tutorial_Upgrade
+  idStepHorda: ID_Tutorial_Wave
+  idStepFin: ID_Tutorial_Done
 --- !u!4 &1318714797
 Transform:
   m_ObjectHideFlags: 0
