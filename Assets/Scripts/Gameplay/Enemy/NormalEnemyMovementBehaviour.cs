@@ -7,18 +7,18 @@ namespace Root.Gameplay {
     [Serializable]
     public class NormalEnemyMovementBehaviour : EnemyMovementBehaviour {
         private List<Transform> waypoints;
-        private StatValue movementSpeed;
+        protected float movementSpeed;
         public override void Initialize(Enemy enemy) {
             base.Initialize(enemy);
             waypoints = Level.Ins.enemyPath;
-            movementSpeed = enemy.GetStats().GetValue(Stat.MovementSpeed);
+            movementSpeed = enemy.GetStats().GetValue(Stat.MovementSpeed).value;
             index = 0;
             totalDistanceTravelled = 0;
         }
 
         private int index;
         public override void Update(float deltaTime) {
-            float moveAmount = movementSpeed.value * deltaTime;
+            float moveAmount = movementSpeed * deltaTime;
             
             
             while (index < waypoints.Count && moveAmount > 0) {
