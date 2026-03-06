@@ -6,6 +6,8 @@ namespace Root.Database {
         public static Database Ins;
         private void Awake() {
             Ins = this;
+            currencySystem = new ();
+            currencySystem.AddCurrency(10);
             DontDestroyOnLoad(this);
         }
 
@@ -16,7 +18,6 @@ namespace Root.Database {
         private void Start() {
             towerDatabase.Initialize();
             currencySystem = new ();
-            currencySystem.AddCurrency(10);
             Assert.IsTrue(staminaSystem != null, "Database: Stamina system not found.");
         }
         
