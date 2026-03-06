@@ -393,7 +393,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nombreEscenaNivel: Nivel_1
-  staminaCost: 50
+  staminaCost: 25
+  confirmationPopup: {fileID: 507450329}
+  translationKey: ID_PopUpTextStartLevel1
+  requireConfirmation: 1
 --- !u!1001 &407165527
 PrefabInstance:
   m_ObjectHideFlags: 0
@@ -1224,7 +1227,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   nombreEscenaNivel: Nivel_2
-  staminaCost: 50
+  staminaCost: 25
+  confirmationPopup: {fileID: 507450329}
+  translationKey: ID_PopUpTextStartLevel2
+  requireConfirmation: 1
 --- !u!1 &1972737447
 GameObject:
   m_ObjectHideFlags: 0
@@ -1414,7 +1420,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 5811346854957164316, guid: 86f13b6630f036e408f7c4f57ad3eccd, type: 3}
       propertyPath: sceneName
-      value: MainMenue
+      value: MainMenu
       objectReference: {fileID: 0}
     - target: {fileID: 5811346854957164316, guid: 86f13b6630f036e408f7c4f57ad3eccd, type: 3}
       propertyPath: nombreEscena
@@ -1430,7 +1436,7 @@ PrefabInstance:
       objectReference: {fileID: 507450329}
     - target: {fileID: 6702646847397418562, guid: 86f13b6630f036e408f7c4f57ad3eccd, type: 3}
       propertyPath: m_Name
-      value: Cambiar de Scena
+      value: Menu Principal Button
       objectReference: {fileID: 0}
     - target: {fileID: 8857147068394276373, guid: 86f13b6630f036e408f7c4f57ad3eccd, type: 3}
       propertyPath: m_text

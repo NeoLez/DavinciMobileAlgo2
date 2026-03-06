@@ -2863,7 +2863,7 @@ MonoBehaviour:
   sceneName: LevelSelector
   confirmationPopup: {fileID: 711420147}
   translationKey: ID_PopUpTextChangeScene
-  requireConfirmation: 1
+  requireConfirmation: 0
 --- !u!224 &9146175511235067151 stripped
 RectTransform:
   m_CorrespondingSourceObject: {fileID: 7066203080264510879, guid: d0abd15e3881f5c469d2aabef28db173, type: 3}
