@@ -11,6 +11,7 @@ GameObject:
   - component: {fileID: 3056659045988001719}
   - component: {fileID: 2838508746078964631}
   - component: {fileID: 7679862183203259211}
+  - component: {fileID: 3354863414390523225}
   m_Layer: 0
   m_Name: EnemySpawner
   m_TagString: Untagged
@@ -46,21 +47,11 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ac95f65d0e044049b5ca8c4290c6ed40, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  waves:
-  - enemy: {fileID: 5900137629561320413, guid: 1b261a7aeab93d645b6528f3dc0781b3, type: 3}
-    amount: 9
-    time: 1
-  - enemy: {fileID: 5900137629561320413, guid: 1b261a7aeab93d645b6528f3dc0781b3, type: 3}
-    amount: 1
-    time: 5
-  - enemy: {fileID: 5900137629561320413, guid: 8fb138e5cfc6704488adeb7584342e87, type: 3}
-    amount: 20
-    time: 0.5
-  waveIndex: 0
   wavesFinished: 0
-  enemiesSpawnedThisWave: 0
   running: 1
   totalSpawnedEnemies: 0
+  _factory: {fileID: 0}
+  delayBetweenWaves: 0
 --- !u!212 &7679862183203259211
 SpriteRenderer:
   m_ObjectHideFlags: 0
@@ -113,6 +104,22 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
+--- !u!114 &3354863414390523225
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 8362915376641640955}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 0c88544065d24544bd665e16c94208ca, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  waves: []
+  waveIndex: 0
+  enemiesSpawnedThisWave: 0
+  wavesFinished: 0
 --- !u!1 &8651656281565015313
 GameObject:
   m_ObjectHideFlags: 0
