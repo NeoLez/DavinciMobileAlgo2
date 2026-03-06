@@ -6,6 +6,15 @@ namespace Root.Gameplay
     public class Grid : MonoBehaviour
     {
         public static Grid Ins;
+
+        [Header("Configuracion de Bloqueo")]
+        [Tooltip("Arrastra aca los GameObjects (Tiles) que queres bloquear")]
+        [SerializeField] private List<GameObject> objetosParaBloquear;
+
+        [SerializeField] private List<Vector2> blockedPositions_Editor;
+        private HashSet<Vector2> blockedPositions = new();
+        private Dictionary<Vector2, Tower> positions = new();
+
         private void Awake()
         {
             Ins = this;
@@ -16,9 +25,28 @@ namespace Root.Gameplay
             }
         }
 
-        [SerializeField] private List<Vector2> blockedPositions_Editor;
-        private HashSet<Vector2> blockedPositions = new();
-        private Dictionary<Vector2, Tower> positions = new();
+        // Metodo que se ejecuta cuando toco algo en el Inspector
+        private void OnValidate()
+        {
+            if (objetosParaBloquear != null && objetosParaBloquear.Count > 0)
+            {
+                foreach (GameObject obj in objetosParaBloquear)
+                {
+                    if (obj == null) continue;
+
+                    // Redondeo la posicion para que encaje perfecto en mi grilla
+                    Vector2 pos = new Vector2(Mathf.Round(obj.transform.position.x), Mathf.Round(obj.transform.position.y));
+
+                    // Si no la tenia guardada, la agrego a la lista real
+                    if (!blockedPositions_Editor.Contains(pos))
+                    {
+                        blockedPositions_Editor.Add(pos);
+                    }
+                }
+                // Limpio la lista de objetos para que el Inspector quede prolijo
+                objetosParaBloquear.Clear();
+            }
+        }
 
         public bool IsPositionBlocked(Vector2 pos)
         {
