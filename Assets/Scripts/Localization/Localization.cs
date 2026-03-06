@@ -11,7 +11,8 @@ public enum Languages
     English
 }
 
-public class Localization : MonoBehaviour {
+public class Localization : MonoBehaviour
+{
     public static Localization Ins;
     [SerializeField] string _webUrl = "https://docs.google.com/spreadsheets/d/e/2PACX-1vRVTI--PlgIhhTWFqtQn38Yq6uK9s9ZMcDmzFWm80Q668NRfDBIvecouSOJDA_STK_djaqpBzs08Hx_/pub?gid=0&single=true&output=csv";
     private bool update;
@@ -22,43 +23,46 @@ public class Localization : MonoBehaviour {
 
     public event Action OnUpdate;
 
-    private void Update() {
-        if (update) {
+    private void Update()
+    {
+        if (update)
+        {
             update = false;
             OnUpdate?.Invoke();
         }
     }
 
-    private void Awake() {
+    private void Awake()
+    {
+        // EL PARCHE MAGICO: Si ya hay un traductor vivo, destruyo esta copia nueva
+        if (Ins != null && Ins != this)
+        {
+            Destroy(this.gameObject);
+            return;
+        }
+
         Ins = this;
         StartCoroutine(DownloadCSV(_webUrl));
-        DontDestroyOnLoad(this);
+        DontDestroyOnLoad(this.gameObject);
     }
 
     IEnumerator DownloadCSV(string url)
     {
         var www = new UnityWebRequest(url);
-
         www.downloadHandler = new DownloadHandlerBuffer();
-
         yield return www.SendWebRequest();
 
         if (www.result == UnityWebRequest.Result.Success)
         {
             Debug.Log("Web Download Success");
-
             var split = new LanguageSplit();
-
             _localization = split.LoadCSV(www.downloadHandler.text, "web");
-
             SaveText(fileName: "Codex", content: www.downloadHandler.text);
         }
         else
         {
             Debug.Log("Web Download Failed");
-
             var result = LoadText("Codex");
-
             var split = new LanguageSplit();
             _localization = split.LoadCSV(result, "hard disk");
         }
@@ -70,16 +74,13 @@ public class Localization : MonoBehaviour {
     public string GetTranslate(string ID)
     {
         var idsDictionary = _localization[_currentLanguage];
-
         idsDictionary.TryGetValue(ID, out var result);
-
         return result;
     }
 
     void SaveText(string fileName, string content)
     {
         string path = Application.persistentDataPath + "/" + fileName;
-
         try
         {
             File.WriteAllText(path, content);
@@ -94,7 +95,6 @@ public class Localization : MonoBehaviour {
     string LoadText(string fileName)
     {
         string path = Application.persistentDataPath + "/" + fileName;
-
         try
         {
             if (File.Exists(path))
@@ -125,5 +125,5 @@ public class Localization : MonoBehaviour {
     {
         return isInitialized;
     }
-
 }
+

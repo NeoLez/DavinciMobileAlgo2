@@ -384,7 +384,6 @@ GameObject:
   - component: {fileID: 7596954585646032296}
   - component: {fileID: 7632554279347000069}
   - component: {fileID: 2492051632786337881}
-  - component: {fileID: 8087274406528054217}
   m_Layer: 5
   m_Name: Pregunta
   m_TagString: Untagged
@@ -508,19 +507,6 @@ MonoBehaviour:
   m_hasFontAssetChanged: 0
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
---- !u!114 &8087274406528054217
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 1100166921790018672}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: da4b98de683de08949fa71c2b46fa8d0, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  _id: ID_PopUpTextQuitApp
 --- !u!1 &3041101423385379292
 GameObject:
   m_ObjectHideFlags: 0
