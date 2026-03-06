@@ -59,5 +59,13 @@ namespace Root.Gameplay {
         {
             EventManager.Unsubscribe<EventPayloads.EnemyDied>(OnEnemyDied);
         }
+
+        
+        public void StartSpawnerManual()
+        {
+            running = true;
+            lastTimeSpawned = Time.time;
+        }
+
     }
 }
