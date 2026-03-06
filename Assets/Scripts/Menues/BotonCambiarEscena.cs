@@ -1,3 +1,4 @@
+using Root;
 using UnityEngine;
 using UnityEngine.SceneManagement;
 
@@ -31,6 +32,6 @@ public class BotonCambiarEscena : MonoBehaviour
 
     private void RealChangeScene()
     {
-        SceneManager.LoadScene(sceneName);
+        LoadingScreen.Instance.LoadScene(sceneName);
     }
 }

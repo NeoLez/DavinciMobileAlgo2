@@ -1,3 +1,4 @@
+using System.Collections;
 using System.Collections.Generic;
 using Root.Utils;
 using UnityEngine;
@@ -11,6 +12,7 @@ namespace Root
         [SerializeField] string baseSceneName;
         [SerializeField] private List<GameObject> dontDestroy;
         [SerializeField] private Localization localization;
+        [SerializeField] private GameObject loadingScreen;
         private bool localizationInitialized;
         private bool remoteManager;
 
@@ -21,7 +23,6 @@ namespace Root
 
             RemoteManager.OnInitialized += () => {
                 Debug.Log("Initialized Remote Manager");
-                Debug.Log(RemoteManager.GetString("nextUpdateDate"));
                 remoteManager = true;
                 HandleInitialize();
             };
@@ -37,25 +38,46 @@ namespace Root
         {
             Debug.Log("Localization Loaded");
             localizationInitialized = true;
-            HandleInitialize();
+            StartCoroutine(HandleInitialize());
         }
 
-        private void HandleInitialize()
+        private IEnumerator HandleInitialize()
         {
-            if (!localizationInitialized || !remoteManager) return;
+            
+            if (!localizationInitialized || !remoteManager) yield break;
             MobileNotificationManager.Initialize();
             EnemySO.InitializeValues();
             TowerSO.InitializeValues();
+            
+            var a = SceneManager.LoadSceneAsync(baseSceneName, LoadSceneMode.Additive);
+            var b = SceneManager.LoadSceneAsync(sceneName, LoadSceneMode.Additive);
+            b.allowSceneActivation = false;
+            
+            while (!a.isDone) {
+                yield return null;
+            }
+            
+            b.allowSceneActivation = true;
 
-            SceneManager.LoadScene(baseSceneName, LoadSceneMode.Additive);
-            SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
+            while (!b.isDone) {
+                yield return null;
+            }
+            
+            loadingScreen.SetActive(false);
+            
+            SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneName));
+            SceneManager.UnloadSceneAsync(gameObject.scene);
+            SceneManager.UnloadSceneAsync(SceneManager.GetSceneByName(baseSceneName));
             Debug.Log("Finished Initialization");
-            Destroy(gameObject);
+        }
+
+        private void HandleInitializeCall() {
+            StartCoroutine(HandleInitialize());
         }
 
         private void OnDestroy()
         {
-            RemoteManager.OnInitialized -= HandleInitialize;
+            RemoteManager.OnInitialized -= HandleInitializeCall;
 
             
             if (localization != null)
