@@ -40,6 +40,8 @@ namespace Root.UI
                 Destroy(statsPanel.transform.GetChild(i).gameObject);
             }
             
+            Debug.Log(tower);
+            Debug.Log(tower.GetStats());
             foreach (var value in this.tower.GetStats().GetAllValues()) {
                 var panel = Instantiate(statsPanelPrefab, statsPanel.transform);
                 panel.GetComponent<StatPanel>().Set(value);

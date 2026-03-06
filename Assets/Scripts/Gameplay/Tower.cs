@@ -14,10 +14,10 @@ namespace Root.Gameplay
         [SerializeField] private TowerSO TowerSO;
         [SerializeField] private int upgradeLevel;
 
-        [Header("Configuración de Sonido")] // <--- AGREGADO
+        [Header("Configuraciï¿½n de Sonido")] // <--- AGREGADO
         [SerializeField] private AudioClip shootSound;
         [SerializeField, Range(0f, 1f)] private float volume = 1f;
-
+        
         private void Start()
         {
             stats = GetComponent<Stats.Stats>();
@@ -30,7 +30,7 @@ namespace Root.Gameplay
             action.Update();
         }
 
-        // --- FUNCIÓN NUEVA PARA DISPARAR EL SONIDO ---
+        // --- FUNCIï¿½N NUEVA PARA DISPARAR EL SONIDO ---
         public void PlayShootSound()
         {
             if (shootSound != null && SoundFXManager.Instance != null)
@@ -41,6 +41,7 @@ namespace Root.Gameplay
 
         public Stats.Stats GetStats()
         {
+            if(stats == null ) stats = GetComponent<Stats.Stats>(); 
             return stats;
         }
 
