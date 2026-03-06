@@ -41,7 +41,7 @@ namespace Root
             // Si no le alcanza, hace return y no carga la escena.
             if (!Database.Database.Ins.staminaSystem.ConsumeStamina(staminaCost)) return;
 
-            SceneManager.LoadScene(nombreEscenaNivel);
+            LoadingScreen.Instance.LoadScene(nombreEscenaNivel);
         }
     }
 }
