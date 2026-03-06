@@ -13,6 +13,9 @@ namespace Root
         [Header("Popup Settings")]
         [SerializeField] private ConfirmationPopup confirmationPopup;
         [SerializeField] private string translationKey;
+
+        // YO: Agrego una key especifica para cuando falta energia
+        [SerializeField] private string noStaminaTranslationKey = "ID_NO_STAMINA";
         [SerializeField] private bool requireConfirmation = true;
 
         private void Awake()
@@ -20,12 +23,10 @@ namespace Root
             staminaCost = RemoteManager.GetInt("levelStaminaCost");
         }
 
-        // Este es el metodo que ya tenes enganchado en el OnClick del Inspector
         public void ComenzarNivel()
         {
             if (requireConfirmation && confirmationPopup != null)
             {
-                // Muestro el cartel primero
                 confirmationPopup.ShowPopup(translationKey, RealComenzarNivel);
             }
             else
@@ -36,11 +37,22 @@ namespace Root
 
         private void RealComenzarNivel()
         {
-            // Aca mantengo tu logica original:
-            // Recien cuando el jugador confirmo, intento cobrarle la estamina.
-            // Si no le alcanza, hace return y no carga la escena.
-            if (!Database.Database.Ins.staminaSystem.ConsumeStamina(staminaCost)) return;
+            // YO: Intento consumir la estamina. Si da false, no alcanza.
+            if (!Database.Database.Ins.staminaSystem.ConsumeStamina(staminaCost))
+            {
+                // YO: Muestro el popup reciclando el mismo panel. Le paso una accion vacia () => {}
+                if (confirmationPopup != null)
+                {
+                    confirmationPopup.ShowPopup(noStaminaTranslationKey, () => {
+                        Debug.Log("Yo: Se cerro el aviso de falta de estamina.");
+                    });
+                }
 
+                // Corto la ejecucion para que no cargue la escena
+                return;
+            }
+
+            // Si paso el if anterior, es que habia estamina y ya se desconto. Cargo el nivel.
             LoadingScreen.Instance.LoadScene(nombreEscenaNivel);
         }
     }

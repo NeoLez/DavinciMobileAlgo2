@@ -2206,6 +2206,10 @@ PrefabInstance:
       value: 
       objectReference: {fileID: 8889938116185246658, guid: 03ea8082d4940b34887d01bd2a39cc1c, type: 3}
     - target: {fileID: 2351309938833582173, guid: d7ed1efa968508a4daacc46e382c1aeb, type: 3}
+      propertyPath: _globalErrorPopup
+      value: 
+      objectReference: {fileID: 711420147}
+    - target: {fileID: 2351309938833582173, guid: d7ed1efa968508a4daacc46e382c1aeb, type: 3}
       propertyPath: _items.Array.size
       value: 2
       objectReference: {fileID: 0}

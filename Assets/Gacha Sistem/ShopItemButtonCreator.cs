@@ -1,20 +1,21 @@
 ﻿using Root.Shop;
-using Root.Gameplay; 
+using Root.Gameplay;
 using UnityEngine;
 
 namespace Root.Shop
-{ // Te recomiendo meterlo en el namespace para evitar lios
+{
     public class ShopItemButtonCreator : MonoBehaviour
     {
         [SerializeField] private ShopItemSO[] _items;
         [SerializeField] private Transform _contentParent;
         [SerializeField] private ShopItemButton _buttonPrefab;
 
+        
+        [SerializeField] private ConfirmationPopup _globalErrorPopup;
+
         private void Start()
         {
-            
             EventManager.Subscribe<EventPayloads.EnemiesEliminated>(OnDataReset);
-
             CrearBotones();
         }
 
@@ -29,7 +30,6 @@ namespace Root.Shop
             {
                 Destroy(child.gameObject);
             }
-
             CrearBotones();
         }
 
@@ -41,6 +41,9 @@ namespace Root.Shop
                 {
                     ShopItemButton newItem = Instantiate(_buttonPrefab, _contentParent);
                     newItem.SetItem(_items[i]);
+
+                    
+                    newItem.errorPopup = _globalErrorPopup;
                 }
             }
         }
