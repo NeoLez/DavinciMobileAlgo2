@@ -138,7 +138,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statsEditorOnly:
   - stat: {fileID: 11400000, guid: 84305bc10475f69a8941388fd2760d3c, type: 2}
-    value: 3
+    value: 2
   - stat: {fileID: 11400000, guid: b85feaa4e77a08ffc95d709936162e61, type: 2}
     value: 2
   - stat: {fileID: 11400000, guid: 052da72eeb90a2621b7d97bc5627ed09, type: 2}
@@ -156,13 +156,15 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   movementBehaviour:
-    rid: 2049209859602907137
+    rid: 9171009036201492482
   settings: {fileID: 11400000, guid: 450c3c27e4d01e8b7b8fceb5b1ccef3c, type: 2}
   references:
     version: 2
     RefIds:
-    - rid: 2049209859602907137
-      type: {class: NormalEnemyMovementBehaviour, ns: Root.Gameplay, asm: Assembly-CSharp}
+    - rid: 9171009036201492482
+      type: {class: AcceleratingEnemyMovemengBehaviour, ns: Root.Gameplay, asm: Assembly-CSharp}
+      data:
+        speedIncrease: 0.2
 --- !u!114 &1451931280200821593
 MonoBehaviour:
   m_ObjectHideFlags: 0
