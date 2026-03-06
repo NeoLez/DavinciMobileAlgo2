@@ -8,9 +8,6 @@ namespace Root {
         [SerializeField] private GameObject canvas;
 
         private void Awake() {
-            if (Instance is not null) {
-                Destroy(this);
-            }
             Instance = this;
             DontDestroyOnLoad(this);
             canvas.SetActive(false);

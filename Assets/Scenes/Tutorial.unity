@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -78170,6 +78170,7 @@ MonoBehaviour:
   icon: {fileID: 782390305}
   towerdescription: {fileID: 587895189}
   statsPanel: {fileID: 831549630}
+  statsPanelPrefab: {fileID: 454502393853771984, guid: b6ac8b230b12722d0a5be61ac6739c2d, type: 3}
   sellButton: {fileID: 326195207}
   upgradeButton: {fileID: 1850064621}
   gameplayUI: {fileID: 323044413}
@@ -102487,6 +102488,38 @@ PrefabInstance:
       propertyPath: panelManager
       value: 
       objectReference: {fileID: 1326958176}
+    - target: {fileID: 2912830522852392528, guid: 3dc7d83c31283174987a0a28d6335678, type: 3}
+      propertyPath: m_Pivot.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912830522852392528, guid: 3dc7d83c31283174987a0a28d6335678, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912830522852392528, guid: 3dc7d83c31283174987a0a28d6335678, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912830522852392528, guid: 3dc7d83c31283174987a0a28d6335678, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912830522852392528, guid: 3dc7d83c31283174987a0a28d6335678, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912830522852392528, guid: 3dc7d83c31283174987a0a28d6335678, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912830522852392528, guid: 3dc7d83c31283174987a0a28d6335678, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912830522852392528, guid: 3dc7d83c31283174987a0a28d6335678, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3608896448114791964, guid: 3dc7d83c31283174987a0a28d6335678, type: 3}
       propertyPath: confirmationPopup
       value: 

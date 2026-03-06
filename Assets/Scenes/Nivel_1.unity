@@ -38,7 +38,7 @@ RenderSettings:
   m_ReflectionIntensity: 1
   m_CustomReflection: {fileID: 0}
   m_Sun: {fileID: 705507994}
-  m_IndirectSpecularColor: {r: 0.18028378, g: 0.22571412, b: 0.30692285, a: 1}
+  m_IndirectSpecularColor: {r: 0, g: 0, b: 0, a: 1}
   m_UseRadianceAmbientProbe: 0
 --- !u!157 &3
 LightmapSettings:
@@ -100824,6 +100824,38 @@ PrefabInstance:
       propertyPath: panelManager
       value: 
       objectReference: {fileID: 1326958176}
+    - target: {fileID: 2912830522852392528, guid: 3dc7d83c31283174987a0a28d6335678, type: 3}
+      propertyPath: m_Pivot.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912830522852392528, guid: 3dc7d83c31283174987a0a28d6335678, type: 3}
+      propertyPath: m_Pivot.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912830522852392528, guid: 3dc7d83c31283174987a0a28d6335678, type: 3}
+      propertyPath: m_AnchorMax.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912830522852392528, guid: 3dc7d83c31283174987a0a28d6335678, type: 3}
+      propertyPath: m_AnchorMax.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912830522852392528, guid: 3dc7d83c31283174987a0a28d6335678, type: 3}
+      propertyPath: m_AnchorMin.x
+      value: 1
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912830522852392528, guid: 3dc7d83c31283174987a0a28d6335678, type: 3}
+      propertyPath: m_AnchorMin.y
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912830522852392528, guid: 3dc7d83c31283174987a0a28d6335678, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 2912830522852392528, guid: 3dc7d83c31283174987a0a28d6335678, type: 3}
+      propertyPath: m_AnchoredPosition.y
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3608896448114791964, guid: 3dc7d83c31283174987a0a28d6335678, type: 3}
       propertyPath: confirmationPopup
       value: 
@@ -101446,25 +101478,37 @@ PrefabInstance:
       propertyPath: m_Name
       value: Tower Info Panel
       objectReference: {fileID: 0}
+    - target: {fileID: 6370697664709700239, guid: 35a91bde7456c6945b70ebad3ca0621c, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
+    - target: {fileID: 7143537526743299959, guid: 35a91bde7456c6945b70ebad3ca0621c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -15.474838
+      objectReference: {fileID: 0}
+    - target: {fileID: 8454978674745582465, guid: 35a91bde7456c6945b70ebad3ca0621c, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -3.348114
+      objectReference: {fileID: 0}
     - target: {fileID: 8707108196339391595, guid: 35a91bde7456c6945b70ebad3ca0621c, type: 3}
       propertyPath: m_AnchorMax.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8707108196339391595, guid: 35a91bde7456c6945b70ebad3ca0621c, type: 3}
       propertyPath: m_AnchorMin.y
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 8707108196339391595, guid: 35a91bde7456c6945b70ebad3ca0621c, type: 3}
       propertyPath: m_SizeDelta.x
-      value: 0
+      value: 527.8893
       objectReference: {fileID: 0}
     - target: {fileID: 8707108196339391595, guid: 35a91bde7456c6945b70ebad3ca0621c, type: 3}
       propertyPath: m_AnchoredPosition.x
-      value: 0
+      value: 263.94464
       objectReference: {fileID: 0}
     - target: {fileID: 8707108196339391595, guid: 35a91bde7456c6945b70ebad3ca0621c, type: 3}
       propertyPath: m_AnchoredPosition.y
-      value: 0
+      value: -46.65
       objectReference: {fileID: 0}
     m_RemovedComponents: []
     m_RemovedGameObjects: []
