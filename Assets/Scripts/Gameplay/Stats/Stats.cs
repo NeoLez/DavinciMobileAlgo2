@@ -1,5 +1,6 @@
 using System;
 using System.Collections.Generic;
+using System.Linq;
 using UnityEngine;
 using UnityEngine.Assertions;
 
@@ -31,6 +32,10 @@ namespace Root.Gameplay.Stats {
         
         public StatValue GetValue(Stat id) {
             return GetValue((int)id);
+        }
+
+        public List<StatValue> GetAllValues() {
+            return statsDictionary.Values.ToList();
         }
         
     }

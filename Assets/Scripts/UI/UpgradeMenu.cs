@@ -12,6 +12,7 @@ namespace Root.UI
         [SerializeField] private Image icon;
         [SerializeField] private TextTranslate towerdescription;
         [SerializeField] private GameObject statsPanel;
+        [SerializeField] private GameObject statsPanelPrefab;
         [SerializeField] private TMP_Text sellButton;
         [SerializeField] private TMP_Text upgradeButton;
 
@@ -34,6 +35,15 @@ namespace Root.UI
                 upgradeButton.text = so.levelCosts[tower.GetUpgradeLevel()].ToString();
             else
                 upgradeButton.text = "Max";
+            
+            for (int i = 0; i < statsPanel.transform.childCount; i++) {
+                Destroy(statsPanel.transform.GetChild(i).gameObject);
+            }
+            
+            foreach (var value in this.tower.GetStats().GetAllValues()) {
+                var panel = Instantiate(statsPanelPrefab, statsPanel.transform);
+                panel.GetComponent<StatPanel>().Set(value);
+            }
         }
 
         public void Sell()

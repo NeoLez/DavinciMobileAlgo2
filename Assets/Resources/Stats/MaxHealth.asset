@@ -13,6 +13,6 @@ MonoBehaviour:
   m_Name: MaxHealth
   m_EditorClassIdentifier: 
   statName: Max Health
-  statDescription: 
+  statDescription: Maximum Health
   statIcon: {fileID: 0}
   id: 7
