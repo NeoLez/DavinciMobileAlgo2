@@ -13,13 +13,12 @@ namespace Root
         [SerializeField] private Localization localization;
         private bool localizationInitialized;
         private bool remoteManager;
+
         private void Awake()
         {
-            localization.OnUpdate += () => {
-                Debug.Log("Localization Loaded");
-                localizationInitialized = true;
-                HandleInitialize();
-            };
+          
+            localization.OnUpdate += HandleLocalizationLoaded;
+
             RemoteManager.OnInitialized += () => {
                 Debug.Log("Initialized Remote Manager");
                 Debug.Log(RemoteManager.GetString("nextUpdateDate"));
@@ -33,12 +32,21 @@ namespace Root
             }
         }
 
-        private void HandleInitialize() {
+        
+        private void HandleLocalizationLoaded()
+        {
+            Debug.Log("Localization Loaded");
+            localizationInitialized = true;
+            HandleInitialize();
+        }
+
+        private void HandleInitialize()
+        {
             if (!localizationInitialized || !remoteManager) return;
             MobileNotificationManager.Initialize();
             EnemySO.InitializeValues();
             TowerSO.InitializeValues();
-            
+
             SceneManager.LoadScene(baseSceneName, LoadSceneMode.Additive);
             SceneManager.LoadScene(sceneName, LoadSceneMode.Additive);
             Debug.Log("Finished Initialization");
@@ -48,6 +56,12 @@ namespace Root
         private void OnDestroy()
         {
             RemoteManager.OnInitialized -= HandleInitialize;
+
+            
+            if (localization != null)
+            {
+                localization.OnUpdate -= HandleLocalizationLoaded;
+            }
         }
     }
 }
