@@ -12,7 +12,7 @@ namespace Root
         [SerializeField] string baseSceneName;
         [SerializeField] private List<GameObject> dontDestroy;
         [SerializeField] private Localization localization;
-        [SerializeField] private GameObject loadingScreen;
+        //[SerializeField] private GameObject loadingScreen;
         private bool localizationInitialized;
         private bool remoteManager;
 
@@ -63,7 +63,7 @@ namespace Root
                 yield return null;
             }
             
-            loadingScreen.SetActive(false);
+            //loadingScreen.SetActive(false);
             
             SceneManager.SetActiveScene(SceneManager.GetSceneByName(sceneName));
             SceneManager.UnloadSceneAsync(gameObject.scene);
