@@ -34723,15 +34723,21 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   waves:
-  - enemy: {fileID: 5900137629561320413, guid: 1b261a7aeab93d645b6528f3dc0781b3, type: 3}
+  - enemy: {fileID: 5900137629561320413, guid: aecd903e17a759a4a87ecca37cb8d4f9, type: 3}
     amount: 9
     time: 1
-  - enemy: {fileID: 5900137629561320413, guid: 1b261a7aeab93d645b6528f3dc0781b3, type: 3}
+  - enemy: {fileID: 5900137629561320413, guid: aecd903e17a759a4a87ecca37cb8d4f9, type: 3}
     amount: 1
     time: 5
   - enemy: {fileID: 5900137629561320413, guid: 8fb138e5cfc6704488adeb7584342e87, type: 3}
     amount: 20
     time: 0.5
+  - enemy: {fileID: 5900137629561320413, guid: 8fb138e5cfc6704488adeb7584342e87, type: 3}
+    amount: 1
+    time: 5
+  - enemy: {fileID: 5900137629561320413, guid: 1b261a7aeab93d645b6528f3dc0781b3, type: 3}
+    amount: 5
+    time: 2
   waveIndex: 0
   enemiesSpawnedThisWave: 0
   wavesFinished: 0
@@ -59064,7 +59070,7 @@ MonoBehaviour:
   victoryScene: Victory
   defeatScene: Defeat
   currencyReward: 20
-  playerHealth: 10
+  playerHealth: 20
   enemyPath:
   - {fileID: 2141121962}
   - {fileID: 555883685}
