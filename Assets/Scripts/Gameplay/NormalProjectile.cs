@@ -9,7 +9,7 @@ namespace Root.Gameplay {
         [SerializeField] private GameObject visuals;
         private Tower _tower;
         private float _creationTime;
-        private int _pierce;
+        [SerializeField] private int _pierce;
         private int _damage;
         
         public override void Initialize(Tower tower, Enemy enemy) {

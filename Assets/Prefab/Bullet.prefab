@@ -49,6 +49,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   speed: 5
   visuals: {fileID: 6806783361050360433}
+  _pierce: 3
 --- !u!50 &4305741217315774068
 Rigidbody2D:
   serializedVersion: 4

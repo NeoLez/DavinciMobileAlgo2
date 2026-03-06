@@ -140,9 +140,9 @@ MonoBehaviour:
   - stat: {fileID: 11400000, guid: 84305bc10475f69a8941388fd2760d3c, type: 2}
     value: 1
   - stat: {fileID: 11400000, guid: b85feaa4e77a08ffc95d709936162e61, type: 2}
-    value: 3
+    value: 5
   - stat: {fileID: 11400000, guid: 052da72eeb90a2621b7d97bc5627ed09, type: 2}
-    value: 1
+    value: 15
 --- !u!114 &5900137629561320413
 MonoBehaviour:
   m_ObjectHideFlags: 0

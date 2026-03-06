@@ -62,7 +62,7 @@ MonoBehaviour:
     - rid: 8825109252694081536
       type: {class: TowerSummonProjectile, ns: Root.Gameplay, asm: Assembly-CSharp}
       data:
-        _projectile: {fileID: 1484568959335264809, guid: 478ad1dfec821d4408be7f0359460c24, type: 3}
+        _projectile: {fileID: 1484568959335264809, guid: 1cffd7be40993da4db4d3608e07460ec, type: 3}
 --- !u!58 &1467976426437330232
 CircleCollider2D:
   m_ObjectHideFlags: 0
@@ -139,7 +139,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   statsEditorOnly:
   - stat: {fileID: 11400000, guid: 6525e5ca070f821b3837783cab0ea6e1, type: 2}
-    value: 3
+    value: 2.5
   - stat: {fileID: 11400000, guid: 12843454f4fc59e4c8f7f581f475bf3f, type: 2}
     value: 3
   - stat: {fileID: 11400000, guid: b85feaa4e77a08ffc95d709936162e61, type: 2}
