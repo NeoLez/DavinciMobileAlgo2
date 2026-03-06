@@ -13,11 +13,11 @@ public class EfectoCargaPuntos : MonoBehaviour
     // Cambiamos el Start normal por un IEnumerator para poder pausarlo
     private IEnumerator Start()
     {
-        // 1. La magia: Esperamos medio segundo al arrancar la escena.
-        // Esto deja que tu TextTranslate y tu Localization hagan su trabajo sin interrupciones.
-        yield return new WaitForSeconds(0.5f);
+        
+      
+        yield return new WaitForSeconds(1f);
 
-        // 2. Ahora sí, buscamos el texto y arrancamos la animación
+        //buscamos el texto y arrancamos la animación
         _textoUI = GetComponent<TMP_Text>();
 
         if (_textoUI != null)

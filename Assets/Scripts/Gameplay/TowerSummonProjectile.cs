@@ -10,6 +10,7 @@ namespace Root.Gameplay {
             Enemy enemy = tower.GetTargetedEnemy();
             if (enemy != null) {
                 Poolable obj = PoolManager.Instance.GetObject(_projectile);
+                tower.PlayShootSound(); // Agregue esta línea para reproducir el sonido de disparo
                 obj.transform.position = tower.transform.position + Vector3.back;
                 Projectile projectile = obj.GetComponent<Projectile>();
                 projectile.Initialize(tower, enemy);
