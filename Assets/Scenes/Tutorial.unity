@@ -78170,6 +78170,7 @@ MonoBehaviour:
   icon: {fileID: 782390305}
   towerdescription: {fileID: 587895189}
   statsPanel: {fileID: 831549630}
+  statsPanelPrefab: {fileID: 454502393853771984, guid: b6ac8b230b12722d0a5be61ac6739c2d, type: 3}
   sellButton: {fileID: 326195207}
   upgradeButton: {fileID: 1850064621}
   gameplayUI: {fileID: 323044413}

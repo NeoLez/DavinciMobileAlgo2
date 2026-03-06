@@ -45,7 +45,6 @@ namespace Root
         {
             
             if (!localizationInitialized || !remoteManager) yield break;
-            MobileNotificationManager.Initialize();
             EnemySO.InitializeValues();
             TowerSO.InitializeValues();
             

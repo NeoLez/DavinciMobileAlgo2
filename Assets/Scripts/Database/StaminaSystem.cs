@@ -144,11 +144,6 @@ namespace Root {
             SaveGame();
 
             if (currentStamina >= maxStamina - 1) return;
-            
-            Assert.IsTrue(Localization.Ins.IsInitialized(), "Localization Service not yet initialized");
-            var staminaNotificationTitleString = Localization.Ins.GetTranslate(StaminaInNotificationTitleID);
-            var staminaNotificationDescriptionString = Localization.Ins.GetTranslate(StaminaInNotificationDescriptionID);
-            MobileNotificationManager.DisplayNotification(MobileNotificationManager.NotifChannelID, staminaNotificationTitleString, staminaNotificationDescriptionString, IconSelecter.myicon_0, IconSelecter.myicon_1, DateTime.Now.AddSeconds(GetSecondsUntilFullRegen() + 1));
         }
     }
 }
