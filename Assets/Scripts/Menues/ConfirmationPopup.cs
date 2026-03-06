@@ -18,7 +18,7 @@ public class ConfirmationPopup : MonoBehaviour
     private void Start()
     {
         // Me aseguro de que arranque apagado
-        popupPanel.SetActive(false);
+        //popupPanel.SetActive(false);
 
         // Asigno mis funciones a los botones por codigo
         yesButton.onClick.AddListener(OnYesClicked);
